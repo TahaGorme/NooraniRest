@@ -1,68 +1,243 @@
 <!DOCTYPE html>
 <html>
-  <head> <title>Noorani Restaurant</title>
-  <script data-ad-client="ca-pub-5944941698781555" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head>
-<body>
- 
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
 <style>
-h6 {
-  color: white;
+body, html {height: 100%}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+.menu {display: none}
+.bgimg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("https://i2.wp.com/mayakitchenette.com/wp-content/uploads/2014/06/tandoori-chicken-2.jpg?ssl=1");
+  min-height: 90%;
 }
-.btnStack {
-  background-color: #ff0000;
-  color: white;
-  text-decoration: none;
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1.428571429;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  border: 1px solid white;
-  border-radius: 5px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
+.wrapper {
+        display: flex;
+        height: 20vh;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      .button {
+        border: 1px transparent;
+        -webkit-border-radius: 40px;
+        border-radius: 40px;
+        color: #eeeeee;
+        cursor: pointer;
+        display: inline-block;
+        font-family: Arial;
+        font-size: 20px;
+        padding: 8px 30px;
+        text-align: center;
+        text-decoration: none;
+        margin-left: 20px;
+        -webkit-animation: glowing 1300ms infinite;
+        -moz-animation: glowing 1300ms infinite;
+        -o-animation: glowing 1300ms infinite;
+        animation: glowing 1300ms infinite;
+      }
+      @-webkit-keyframes glowing {
+        0% {
+          background-color: #2b2b2b;
+          -webkit-box-shadow: 0 0 3px #2b2b2b;
+        }
+        50% {
+          background-color: #2b2b2b;
+          -webkit-box-shadow: 0 0 15px #2b2b2b;
+        }
+        100% {
+          background-color: #000;
+          -webkit-box-shadow: 0 0 3px #000;
+        }
+      }
+      @keyframes glowing {
+        0% {
+          background-color: #2b2b2b;
+          box-shadow: 0 0 3px #2b2b2b;
+        }
+        50% {
+          background-color: #2b2b2b;
+          box-shadow: 0 0 15px #2b2b2b;
+        }
+        100% {
+          background-color: #000;
+          box-shadow: 0 0 3px #000;
+        }
+      }
+      .svg-btn {
+        display: block;
+        width: 230px;
+        height: 230px;
+        margin-left: 10px;
+      }
+      svg {
+        fill: blue;
+        -webkit-animation: glowing-polygon 1300ms infinite;
+        -moz-animation: glowing-polygon 1300ms infinite;
+        -o-animation: glowing-polygon 1300ms infinite;
+        animation: glowing-polygon 1300ms infinite;
+      }
+      @-webkit-keyframes glowing-polygon {
+        0% {
+          fill: #0091b2;
+          -webkit-filter: drop-shadow( 0 0 3px #0091b2);
+        }
+        50% {
+          fill: #21c7ed;
+          -webkit-filter: drop-shadow( 0 0 15px #21c7ed);
+        }
+        100% {
+          fill: #0091b2;
+          -webkit-filter: drop-shadow( 0 0 3px #0091b2);
+        }
+      }
+      @keyframes glowingPolygon {
+        0% {
+          fill: #0091b2;
+          filter: drop-shadow( 0 0 3px #0091b2);
+        }
+        50% {
+          fill: #21c7ed;
+          filter: drop-shadow( 0 0 15px #21c7ed);
+        }
+        100% {
+          fill: #0091b2;
+          filter: drop-shadow( 0 0 3px #0091b2);
+        	}
+        }
+</style>
+<body>
 
-a.btnStack:hover {
-  background-color: #ff544f;
-}
-body {
-  background-color: black;
-  font-family: cursive;
-}
-
-.glow {
-  font-size: 40px;
-  color: #fff;
-  text-align: center;
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;}
-
-@-webkit-keyframes glow {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-  }
+<!-- Navbar (sit on top) -->
+<div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <a href="#" class="w3-bar-item w3-button">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="#myMap" class="w3-bar-item w3-button">CONTACT</a>
+  </div>
+</div>
   
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-padding">
+    <span class="w3-tag w3-xlarge">Open from 10am to 12pm</span>
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white w3-hide-small" style="font-size:100px">Noorani<br>Restaurant</span>
+    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:60px"><b>Noorani<br>Restaurant</b></span>
+
+     <p><button onclick="document.getElementById('menu').style.display='block'" class="button" a href="#menu">Let me see the menu</button></p>
+  </div>
+</header>
+
+<!-- Menu Modal -->
+<div id="menu" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-black w3-display-container">
+      <span onclick="document.getElementById('menu').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <h1>Starters</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Tomato Soup <b>$2.50</b></h5>
+      <h5>Chicken Salad <b>$3.50</b></h5>
+      <h5>Bread and Butter <b>$1.00</b></h5>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Main Courses</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Grilled Fish and Potatoes <b>$8.50</b></h5>
+      <h5>Italian Pizza <b>$5.50</b></h5>
+      <h5>Veggie Pasta <b>$4.00</b></h5>
+      <h5>Chicken and Potatoes <b>$6.50</b></h5>
+      <h5>Deluxe Burger <b>$5.00</b></h5>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Desserts</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Fruit Salad <b>$2.50</b></h5>
+      <h5>Ice cream <b>$2.00</b></h5>
+      <h5>Chocolate Cake <b>$4.00</b></h5>
+      <h5>Cheese <b>$5.50</b></h5>
+    </div>
+  </div>
+</div>
+
+
+<!-- About Container -->
+<div class="w3-container w3-padding-64 w3-red w3-grayscale w3-xlarge" id="about">
+  <div class="w3-content">
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">About</h1>
+    <p>The Pizza Restaurant was founded in blabla by Mr. Italiano in lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p><strong>The Chef?</strong> Mr. Italiano himself<img src="/w3images/chef.jpg" style="width:150px" class="w3-circle w3-right" alt="Chef"></p>
+    <p>We are proud of our interiors.</p>
+    <img src="/w3images/onepage_restaurant.jpg" style="width:100%" class="w3-margin-top w3-margin-bottom" alt="Restaurant">
+    <h1><b>Opening Hours</b></h1>
+    
+    <div class="w3-row">
+      <div class="w3-col s6">
+        <p>Mon & Tue CLOSED</p>
+        <p>Wednesday 10.00 - 24.00</p>
+        <p>Thursday 10:00 - 24:00</p>
+      </div>
+      <div class="w3-col s6">
+        <p>Friday 10:00 - 12:00</p>
+        <p>Saturday 10:00 - 23:00</p>
+        <p>Sunday Closed</p>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Image of location/map -->
+<img src="/w3images/map.jpg" class="w3-image w3-greyscale" style="width:100%;" id="myMap">
+
+<!-- Contact -->
+<div class="w3-container w3-padding-64 w3-blue-grey w3-grayscale-min w3-xlarge">
+  <div class="w3-content">
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Contact</h1>
+    <p>Find us at some address at some place or call us at 05050515-122330</p>
+    <p><span class="w3-tag">FYI!</span> We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste.</p>
+    <p class="w3-xxlarge"><strong>Reserve</strong> a table, ask for today's special or just send us a message:</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2017-11-16T20:00"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+      <p><button class="w3-button w3-light-grey w3-block" type="submit">SEND MESSAGE</button></p>
+    </form>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-48 w3-xxlarge">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
   }
-}</style>
-<center>
-<h1 class="glow">Noorani Restaurant</h1>
-<link href='https://fonts.googleapis.com/css?family=Oswald:400' rel='stylesheet' type='text/css'>
-<a href="https://github.com/TahaGorme/NooraniRest/blob/master/app-release.apk?raw=true" class="btnStack">Install Apk</a>
-<h6>If you find problem installing the app then install the mirror app</h6>
-<link href='https://fonts.googleapis.com/css?family=Oswald:400' rel='stylesheet' type='text/css'>
-<a href="https://github.com/TahaGorme/NooraniRest/blob/master/app-debug.apk?raw=true" class="btnStack">Mirror Apk</a>
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-red";
+}
+document.getElementById("myLink").click();
+</script>
+
 </body>
 </html>
-
