@@ -16,6 +16,32 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
   background-image: url("https://i2.wp.com/mayakitchenette.com/wp-content/uploads/2014/06/tandoori-chicken-2.jpg?ssl=1");
   min-height: 90%;
 }
+.link-button-wrapper {
+    width: 200px;
+    height: 40px;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    border-radius: 4px;
+    background-color: #097BC0;
+    box-shadow: 0px 2px 4px gray;
+    display: block;
+    border:1px solid #094BC0;
+}
+.link-button-wrapper > a {
+    display: inline-table;
+    cursor: pointer;
+    text-decoration: none;
+    height: 100%;
+    width:100%;
+}
+.link-button-wrapper > a > h1 {
+    margin: 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+    color: #f7f8f8;
+    font-size: 18px;
+    font-family: cabinregular;
+    text-align: center;
+}
 .wrapper {
         display: flex;
         height: 20vh;
@@ -175,9 +201,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
   <div class="w3-content">
     <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">About</h1>
     <p>The Pizza Restaurant was founded in blabla by Mr. Italiano in lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <p><strong>The Chef?</strong> Mr. Italiano himself<img src="/w3images/chef.jpg" style="width:150px" class="w3-circle w3-right" alt="Chef"></p>
+    <p><strong>The Chef?</strong> Mr. Italiano himself<img src="https://tnimage.s3.hicloud.net.tw/photos/shares/chiucs/20130502/5618871.jpg" style="width:150px" class="w3-circle w3-right" alt="Chef"></p>
     <p>We are proud of our interiors.</p>
-    <img src="/w3images/onepage_restaurant.jpg" style="width:100%" class="w3-margin-top w3-margin-bottom" alt="Restaurant">
+    <img src="https://images.jdmagicbox.com/comp/mumbai/u9/022pxx22.xx22.131106210402.z5u9/catalogue/classic-veg-restaurant-malad-east-mumbai-pure-veg-restaurants-3rogp85.jpg?clr=" style="width:100%" class="w3-margin-top w3-margin-bottom" alt="Restaurant">
     <h1><b>Opening Hours</b></h1>
     
     <div class="w3-row">
@@ -197,7 +223,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
 </div>
 
 <!-- Image of location/map -->
-<img src="/w3images/map.jpg" class="w3-image w3-greyscale" style="width:100%;" id="myMap">
+<img src="https://github.com/TahaGorme/NooraniRest/blob/master/nooranilocation.PNG?raw=true" style="width:100%;" id="myMap">
 
 <!-- Contact -->
 <div class="w3-container w3-padding-64 w3-blue-grey w3-grayscale-min w3-xlarge">
@@ -206,38 +232,22 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
     <p>Find us at some address at some place or call us at 05050515-122330</p>
     <p><span class="w3-tag">FYI!</span> We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste.</p>
     <p class="w3-xxlarge"><strong>Reserve</strong> a table, ask for today's special or just send us a message:</p>
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
-      <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2017-11-16T20:00"></p>
-      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
-      <p><button class="w3-button w3-light-grey w3-block" type="submit">SEND MESSAGE</button></p>
-    </form>
-  </div>
+
+<a href="tel:919137335805"><img src="path/to/phone/icon.jpg" /></a>
+<center>
+<div class="link-button-wrapper">
+    <a href="tel:919137335805">
+        <h1>Call Us</h1>
+    </a>
 </div>
-
+<div class="link-button-wrapper">
+    <a href="https://wa.me/919137335805/?text=urlencodedtext">
+        <h1>Whatsapp Us</h1>
+    </a>
+</div>
 <!-- Footer -->
-<footer class="w3-center w3-black w3-padding-48 w3-xxlarge">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-</footer>
+</center>
 
-<script>
-// Tabbed Menu
-function openMenu(evt, menuName) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("menu");
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < x.length; i++) {
-     tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
-  }
-  document.getElementById(menuName).style.display = "block";
-  evt.currentTarget.firstElementChild.className += " w3-red";
-}
-document.getElementById("myLink").click();
-</script>
 
 </body>
 </html>
