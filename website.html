@@ -1,230 +1,247 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Noorani Restaurant</title>
-<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-  <script data-ad-client="ca-pub-5944941698781555" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script data-ad-client="ca-pub-9633484731664931" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <style>
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.secRight{
+     height: 500px;
+     display: flex;
+     align-items: center;
+     justify-content: space-evenly;
+     max-width: 80%;
+     margin: auto;
+}
+.contact{
+ height: 90vh;
+    background-color: #f6f5f4;
+}
+.form input{
+    width: 100%;
+    font-size: 18px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    margin: 15px 0;
+    padding: 5px;
+}
+.secLeft{
+     height: 500px;
+     display: flex;
+     align-items: center;
+     justify-content: space-evenly;
+     max-width: 80%;
+     margin: auto;
+     flex-direction: row-reverse;
+}
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     position: sticky;
+     top:0;
+     cursor: pointer;
+}
+.text-big{
+font-size: 40px;
+}
+.text-small{
+    font-size: 20px;
+
+}
+.nav-list{
+width: 50%;
+/* background-color: black; */
+display: flex;
+align-items: center;
+}
+.btn{
+     padding: 8px 20px;
+     margin :8px 3px;
+     border: 2px solid white;
+     border-radius: 5px;
+     background: none;
+     color: white;
+     cursor: pointer;
+}
+.btn-sm{
+     padding: 6px 10px;
+     vertical-align: middle;;
+   
+}
+.logo{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    width: 33%;
+    border: 3px solid tomato;
+    border-radius: 50%;
+ 
+}
+.nav-list li{
+list-style: none;
+padding: 26px 30px;
+}
+.background{
+    background: rgba(0, 0, 0, 0.7) url('https://previews.123rf.com/images/artinspiring/artinspiring1911/artinspiring191100231/133251808-people-talk-using-speech-bubble-group-of-happy-people-chatting-.jpg');
+background-size: cover;
+background-blend-mode: darken;
+
+}
+.nav-list li a:hover{
+    color: gray;
+}
+.nav-list li a{
+    text-decoration: none;
+    color: white;
+}
+.rightNav{
+    /* background-color: teal; */
+    width: 50%;
+    text-align: right;
+    padding: 0 23px;
+}
+.firstSection{
+    height: 100vh;
+}
+.firstHalf{
+width: 80%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.secondHalf{
+width: 30%;
+}
+.form{
+    max-width: 500px;
+    margin: auto;
+}
+#search{
+    padding: 5px;
+    font-size: 17px;
+    border: 2px solid gray;
+    border-radius: 9px;
+}
+.text-center{
+    text-align: center;
+    padding: 30px;
+    font-size: 30px;
+}
+.box-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    max-width: 50%;
+    margin: auto;
+    height: 75%;
+}
+.secondHalf img{
+    width: 80%;
+    border-radius: 150px;
+    border: 2px solid white;
+}
+.paras{
+    padding: 0px 65px;
+}
+    </style>
 </head>
 <body>
+    <nav class="navbar background">
+<ul class="nav-list">
+    <div class="logo"><img src="https://www.ionnetworking.com/wp-content/uploads/2017/04/Outlook-Logo-icon-200x200.png" alt="logo"></div>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact Us</a></li>
 
-<header class="text-gray-700 body-font">
-  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-    <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
-      <a class="mr-5 hover:text-gray-900">Home</a>
-      <a class="mr-5 hover:text-gray-900">Menu</a>
-      <a class="mr-5 hover:text-gray-900">About</a>
-      <a class="hover:text-gray-900">Contact</a>
+</ul>
+<div class="rightNav">
+    <input type="text" name="search" id=search>
+<button class="btn btn-sm">Search</button>
+</div>
+
     </nav>
-    <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
 
-      <span class="ml-3 text-xl">Noorani Restaurant</span>
-    </a>
-    <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-      <button class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0">Official App
-        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-          <path d="M5 12h14M12 5l7 7-7 7"></path>
-        </svg>
-      </button>
+    <section class="background firstSection">
+<div class="box-main">
+
+    <div class="firstHalf">
+
+        <p class="text-big">Text</p>
+        <p class="text-small">Some big text or a paragraph which has to be big</p>
+<div class="buttons">
+
+    <button class="btn">Text</button>
+    <button class="btn">Text two</button>
+
+</div>
     </div>
-  </div>
-</header>
-<section class="text-gray-700 body-font">
-  <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-      <img class="object-cover object-center rounded" alt="hero" src="https://source.unsplash.com/user/erondu/720x600">
+    <div class="secondHalf">
+<img src="https://www.ionnetworking.com/wp-content/uploads/2017/04/Outlook-Logo-icon-200x200.png" alt="Image">
+
     </div>
-    <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Knausgaard typewriter readymade marfa</h1>
-      <p class="mb-8 leading-relaxed">Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid swag typewriter affogato, hella selvage wolf narwhal dreamcatcher.</p>
-      <html>
+</div>
 
-<script>
+    </section>
+    <section class="secRight">
+        <div class="paras">
 
-<!-------Admob Ads Script By Anees Shah ------>
-
-
-var pubid = '9633484731664931';
-
-<!------------------------------------------------------------------------->
-<!-- Banner Ad Slot Id Here -->
-var s1 = '5091440429';
-var pn1 = 'com.anees.myappad';
-var _0x6717=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x67\x6F\x6F\x67\x6C\x65\x61\x64\x73\x2E\x67\x2E\x64\x6F\x75\x62\x6C\x65\x63\x6C\x69\x63\x6B\x2E\x6E\x65\x74\x2F\x6D\x61\x64\x73\x2F\x67\x6D\x61\x3F\x70\x72\x65\x71\x73\x3D\x30\x26\x75\x5F\x73\x64\x3D\x31\x2E\x35\x26\x75\x5F\x77\x3D\x33\x32\x30\x26\x6D\x73\x69\x64\x3D","\x26\x63\x61\x70\x3D\x61\x26\x6A\x73\x3D\x61\x66\x6D\x61\x2D\x73\x64\x6B\x2D\x61\x2D\x76\x33\x2E\x33\x2E\x30\x26\x74\x6F\x61\x72\x3D\x30\x26\x69\x73\x75\x3D\x57\x25\x32\x37\x2B\x4D\x61\x74\x68\x2E\x66\x6C\x6F\x6F\x72\x25\x32\x38\x4D\x61\x74\x68\x2E\x72\x61\x6E\x64\x6F\x6D\x25\x32\x38\x25\x32\x39\x2A\x39\x25\x32\x39\x2B\x25\x32\x37\x45\x45\x41\x42\x42\x38\x45\x45\x25\x32\x37\x2B\x4D\x61\x74\x68\x2E\x66\x6C\x6F\x6F\x72\x25\x32\x38\x4D\x61\x74\x68\x2E\x72\x61\x6E\x64\x6F\x6D\x25\x32\x38\x25\x32\x39\x2A\x39\x39\x25\x32\x39\x2B\x25\x32\x37\x43\x32\x42\x45\x37\x37\x30\x42\x36\x38\x34\x44\x25\x32\x37\x2B\x4D\x61\x74\x68\x2E\x66\x6C\x6F\x6F\x72\x25\x32\x38\x4D\x61\x74\x68\x2E\x72\x61\x6E\x64\x6F\x6D\x25\x32\x38\x25\x32\x39\x2A\x39\x39\x39\x39\x39\x25\x32\x39\x2B\x25\x32\x37\x45\x43\x42\x26\x63\x69\x70\x61\x3D\x30\x26\x66\x6F\x72\x6D\x61\x74\x3D\x33\x32\x30\x78\x35\x30\x5F\x6D\x62\x26\x6E\x65\x74\x3D\x77\x69\x26\x61\x70\x70\x5F\x6E\x61\x6D\x65\x3D\x31\x2E\x61\x6E\x64\x72\x6F\x69\x64\x2E","\x26\x68\x6C\x3D\x65\x6E\x26\x75\x5F\x68\x3D\x25\x32\x37\x2B\x4D\x61\x74\x68\x2E\x66\x6C\x6F\x6F\x72\x25\x32\x38\x4D\x61\x74\x68\x2E\x72\x61\x6E\x64\x6F\x6D\x25\x32\x38\x25\x32\x39\x2A\x39\x39\x39\x25\x32\x39\x2B\x25\x32\x37\x26\x63\x61\x72\x72\x69\x65\x72\x3D\x25\x32\x37\x2B\x4D\x61\x74\x68\x2E\x66\x6C\x6F\x6F\x72\x25\x32\x38\x4D\x61\x74\x68\x2E\x72\x61\x6E\x64\x6F\x6D\x25\x32\x38\x25\x32\x39\x2A\x39\x39\x39\x39\x39\x39\x25\x32\x39\x2B\x25\x32\x37\x26\x70\x74\x69\x6D\x65\x3D\x30\x26\x75\x5F\x61\x75\x64\x69\x6F\x3D\x34\x26\x75\x5F\x73\x6F\x3D\x70\x26\x6F\x75\x74\x70\x75\x74\x3D\x68\x74\x6D\x6C\x26\x72\x65\x67\x69\x6F\x6E\x3D\x6D\x6F\x62\x69\x6C\x65\x5F\x61\x70\x70\x26\x75\x5F\x74\x7A\x3D\x2D\x25\x32\x37\x2B\x4D\x61\x74\x68\x2E\x66\x6C\x6F\x6F\x72\x25\x32\x38\x4D\x61\x74\x68\x2E\x72\x61\x6E\x64\x6F\x6D\x25\x32\x38\x25\x32\x39\x2A\x39\x39\x39\x25\x32\x39\x2B\x25\x32\x37\x26\x63\x6C\x69\x65\x6E\x74\x5F\x73\x64\x6B\x3D\x31\x26\x65\x78\x3D\x31\x26\x63\x6C\x69\x65\x6E\x74\x3D\x63\x61\x2D\x61\x70\x70\x2D\x70\x75\x62\x2D","\x26\x73\x6C\x6F\x74\x6E\x61\x6D\x65\x3D","\x26\x63\x61\x70\x73\x3D\x69\x6E\x6C\x69\x6E\x65\x56\x69\x64\x65\x6F\x5F\x69\x6E\x74\x65\x72\x61\x63\x74\x69\x76\x65\x56\x69\x64\x65\x6F\x5F\x6D\x72\x61\x69\x64\x31\x5F\x63\x6C\x69\x63\x6B\x54\x72\x61\x63\x6B\x69\x6E\x67\x5F\x73\x64\x6B\x41\x64\x6D\x6F\x62\x41\x70\x69\x46\x6F\x72\x41\x64\x73\x26\x6A\x73\x76\x3D\x31\x38\x22\x20\x68\x65\x69\x67\x68\x74\x3D\x22\x35\x35\x22\x20\x77\x69\x64\x74\x68\x3D\x22\x33\x32\x35\x22\x20\x66\x72\x61\x6D\x65\x62\x6F\x72\x64\x65\x72\x3D\x22\x30\x22\x20\x73\x63\x72\x6F\x6C\x6C\x69\x6E\x67\x3D\x22\x6E\x6F\x22\x20\x77\x69\x64\x74\x68\x3D\x22\x30\x22\x20\x68\x65\x69\x67\x68\x74\x3D\x22\x30\x22\x20\x6D\x61\x72\x67\x69\x6E\x77\x69\x64\x74\x68\x3D\x22\x30\x22\x20\x6D\x61\x72\x67\x69\x6E\x68\x65\x69\x67\x68\x74\x3D\x22\x30\x22\x20"];var src1=_0x6717[0]+ pn1+ _0x6717[1]+ pn1+ _0x6717[2]+ pubid+ _0x6717[3]+ s1+ _0x6717[4]
-</script>
-<!------------------------------------------------------------------------->
-
-  <head>
-  <style>
-            table, th, td {
-                border: 1px solid black;
-            }
-        </style>
-    <link type="text/css" href="css/tabs-1.css" rel="stylesheet" />   
-    <script src="jquery.tools.min.js"></script>
-
-    <script type="text/javascript"> 
-      $(document).ready(function(){
-       $("ul.tabs").tabs("div.panes > div");
-     });
- </script>
-  </head>
-    <body>
-     
-      
-     
-     <!-- BANNER 1 -->
-    <tr>
-       <td> <script type="text/javascript">
-var _0x28f9=["\x3C\x68\x32\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x3E\x3C\x69\x66\x72\x61\x6D\x65\x20\x73\x72\x63\x3D\x22","\x2F\x3E\x3C\x2F\x69\x66\x72\x61\x6D\x65\x3E\x3C\x2F\x68\x31\x3E","\x77\x72\x69\x74\x65"];document[_0x28f9[2]](_0x28f9[0]+ src1+ _0x28f9[1])
-</script></td>
-       
-
-
-  
- 
- </tr>
- 
- 
-
-
-    </tr>
-  
-   
-  
-     
-
-      
-  </body>
-</html>
-      <div class="flex lg:flex-row md:flex-col">
-        <button class="bg-gray-200 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-300 focus:outline-none">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 512 512">
-            <path d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z"></path>
-          </svg>
-          <span class="ml-4 flex items-start flex-col leading-none">
-            <span class="text-xs text-gray-600 mb-1">GET IT ON</span>
-            <span class="title-font font-medium">Google Play</span>
-          </span>
-        </button>
-        
-     
-  </div>
-</section>
-
-<section class="text-gray-700 body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-col text-center w-full mb-20">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Master Cleanse Reliac Heirloom</h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
-    </div>
-    <div class="flex flex-wrap -m-4 text-center">
-      <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
-            <path d="M8 17l4 4 4-4m-4-5v9"></path>
-            <path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"></path>
-          </svg>
-          <h2 class="title-font font-medium text-3xl text-gray-900">2.7K</h2>
-          <p class="leading-relaxed">Downloads</p>
-        </div>
-      </div>
-      <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
-            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"></path>
-          </svg>
-          <h2 class="title-font font-medium text-3xl text-gray-900">1.3K</h2>
-          <p class="leading-relaxed">Users</p>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</section><center>
-
-<section class="text-gray-700 body-font relative">
-<h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact</h1></center>
-  <div class="container px-5 py-24 mx-auto flex sm:flex-no-wrap flex-wrap">
-    <div class="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
-      <iframe width="100%" height="100%" class="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed" style="filter: grayscale(1) contrast(1.2) opacity(0.4);"></iframe>
-      <div class="bg-white relative flex flex-wrap py-6">
-        <div class="lg:w-1/2 px-6">
-          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm">ADDRESS</h2>
-          <p class="leading-relaxed">Near Noorani Masjid Opp Bage-Noor Building Patanwadi Malad East -400097, Mumbai, Maharashtra 400097</p>
-        </div>
-        <div class="lg:w-1/2 px-6 mt-4 lg:mt-0">
-          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm">EMAIL</h2>
-          <a class="text-indigo-500 leading-relaxed">tahagorme@gmail.com</a>
-          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mt-4">PHONE</h2>
-          <p class="leading-relaxed">+919137335805</p>
-        </div>
-      </div>
+        <p class="sectionTag text-big">text</p>
+        <p class="sectionSubag text-small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, pariatur laudantium, dolorem corrupti nulla architecto tempora dolore, laboriosam magnam maiores et cupiditate illum. Aut nisi corporis sapiente molestias debitis provident, sequi aspernatur accusantium beatae fugiat, neque assumenda voluptatem perferendis vel similique. Veritatis facilis at maxime obcaecati optio fugiat eligendi praesentium reprehenderit tenetur illum, minus eum id! Quis inventore facilis eius praesentium voluptatem explicabo dolore velit, itaque odit, dolorem non maxime maiores. Molestiae quasi, ipsa deleniti ipsam ad qui sequi corrupti quidem autem delectus animi amet! Nam sequi doloremque aliquid deleniti aliquam, nisi possimus inventore consequatur recusandae sint ratione ab dolorem.</p>
     </div>
 
-  </div>
-</section>
-    <html>
+        <div class="thumbnail">
 
-<script>
+    <img src="https://www.ionnetworking.com/wp-content/uploads/2017/04/Outlook-Logo-icon-200x200.png" alt="image" class="imgFluif">
+</div>
+    </section>
 
-<!-------Admob Ads Script By Anees Shah ------>
+    <section class="secLeft">
+        <div class="paras">
 
+        <p class="sectionTag text-big">text</p>
+        <p class="sectionSubag text-small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, pariatur laudantium, dolorem corrupti nulla architecto tempora dolore, laboriosam magnam maiores et cupiditate illum. Aut nisi corporis sapiente molestias debitis provident, sequi aspernatur accusantium beatae fugiat, neque assumenda voluptatem perferendis vel similique. Veritatis facilis at maxime obcaecati optio fugiat eligendi praesentium reprehenderit tenetur illum, minus eum id! Quis inventore facilis eius praesentium voluptatem explicabo dolore velit, itaque odit, dolorem non maxime maiores. Molestiae quasi, ipsa deleniti ipsam ad qui sequi corrupti quidem autem delectus animi amet! Nam sequi doloremque aliquid deleniti aliquam, nisi possimus inventore consequatur recusandae sint ratione ab dolorem.</p>
+    </div>
 
-var pubid = '9633484731664931';
+        <div class="thumbnail">
 
-<!------------------------------------------------------------------------->
-<!-- Banner Ad Slot Id Here -->
-var s1 = '5091440429';
-var pn1 = 'com.anees.myappad';
-var _0x6717=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x67\x6F\x6F\x67\x6C\x65\x61\x64\x73\x2E\x67\x2E\x64\x6F\x75\x62\x6C\x65\x63\x6C\x69\x63\x6B\x2E\x6E\x65\x74\x2F\x6D\x61\x64\x73\x2F\x67\x6D\x61\x3F\x70\x72\x65\x71\x73\x3D\x30\x26\x75\x5F\x73\x64\x3D\x31\x2E\x35\x26\x75\x5F\x77\x3D\x33\x32\x30\x26\x6D\x73\x69\x64\x3D","\x26\x63\x61\x70\x3D\x61\x26\x6A\x73\x3D\x61\x66\x6D\x61\x2D\x73\x64\x6B\x2D\x61\x2D\x76\x33\x2E\x33\x2E\x30\x26\x74\x6F\x61\x72\x3D\x30\x26\x69\x73\x75\x3D\x57\x25\x32\x37\x2B\x4D\x61\x74\x68\x2E\x66\x6C\x6F\x6F\x72\x25\x32\x38\x4D\x61\x74\x68\x2E\x72\x61\x6E\x64\x6F\x6D\x25\x32\x38\x25\x32\x39\x2A\x39\x25\x32\x39\x2B\x25\x32\x37\x45\x45\x41\x42\x42\x38\x45\x45\x25\x32\x37\x2B\x4D\x61\x74\x68\x2E\x66\x6C\x6F\x6F\x72\x25\x32\x38\x4D\x61\x74\x68\x2E\x72\x61\x6E\x64\x6F\x6D\x25\x32\x38\x25\x32\x39\x2A\x39\x39\x25\x32\x39\x2B\x25\x32\x37\x43\x32\x42\x45\x37\x37\x30\x42\x36\x38\x34\x44\x25\x32\x37\x2B\x4D\x61\x74\x68\x2E\x66\x6C\x6F\x6F\x72\x25\x32\x38\x4D\x61\x74\x68\x2E\x72\x61\x6E\x64\x6F\x6D\x25\x32\x38\x25\x32\x39\x2A\x39\x39\x39\x39\x39\x25\x32\x39\x2B\x25\x32\x37\x45\x43\x42\x26\x63\x69\x70\x61\x3D\x30\x26\x66\x6F\x72\x6D\x61\x74\x3D\x33\x32\x30\x78\x35\x30\x5F\x6D\x62\x26\x6E\x65\x74\x3D\x77\x69\x26\x61\x70\x70\x5F\x6E\x61\x6D\x65\x3D\x31\x2E\x61\x6E\x64\x72\x6F\x69\x64\x2E","\x26\x68\x6C\x3D\x65\x6E\x26\x75\x5F\x68\x3D\x25\x32\x37\x2B\x4D\x61\x74\x68\x2E\x66\x6C\x6F\x6F\x72\x25\x32\x38\x4D\x61\x74\x68\x2E\x72\x61\x6E\x64\x6F\x6D\x25\x32\x38\x25\x32\x39\x2A\x39\x39\x39\x25\x32\x39\x2B\x25\x32\x37\x26\x63\x61\x72\x72\x69\x65\x72\x3D\x25\x32\x37\x2B\x4D\x61\x74\x68\x2E\x66\x6C\x6F\x6F\x72\x25\x32\x38\x4D\x61\x74\x68\x2E\x72\x61\x6E\x64\x6F\x6D\x25\x32\x38\x25\x32\x39\x2A\x39\x39\x39\x39\x39\x39\x25\x32\x39\x2B\x25\x32\x37\x26\x70\x74\x69\x6D\x65\x3D\x30\x26\x75\x5F\x61\x75\x64\x69\x6F\x3D\x34\x26\x75\x5F\x73\x6F\x3D\x70\x26\x6F\x75\x74\x70\x75\x74\x3D\x68\x74\x6D\x6C\x26\x72\x65\x67\x69\x6F\x6E\x3D\x6D\x6F\x62\x69\x6C\x65\x5F\x61\x70\x70\x26\x75\x5F\x74\x7A\x3D\x2D\x25\x32\x37\x2B\x4D\x61\x74\x68\x2E\x66\x6C\x6F\x6F\x72\x25\x32\x38\x4D\x61\x74\x68\x2E\x72\x61\x6E\x64\x6F\x6D\x25\x32\x38\x25\x32\x39\x2A\x39\x39\x39\x25\x32\x39\x2B\x25\x32\x37\x26\x63\x6C\x69\x65\x6E\x74\x5F\x73\x64\x6B\x3D\x31\x26\x65\x78\x3D\x31\x26\x63\x6C\x69\x65\x6E\x74\x3D\x63\x61\x2D\x61\x70\x70\x2D\x70\x75\x62\x2D","\x26\x73\x6C\x6F\x74\x6E\x61\x6D\x65\x3D","\x26\x63\x61\x70\x73\x3D\x69\x6E\x6C\x69\x6E\x65\x56\x69\x64\x65\x6F\x5F\x69\x6E\x74\x65\x72\x61\x63\x74\x69\x76\x65\x56\x69\x64\x65\x6F\x5F\x6D\x72\x61\x69\x64\x31\x5F\x63\x6C\x69\x63\x6B\x54\x72\x61\x63\x6B\x69\x6E\x67\x5F\x73\x64\x6B\x41\x64\x6D\x6F\x62\x41\x70\x69\x46\x6F\x72\x41\x64\x73\x26\x6A\x73\x76\x3D\x31\x38\x22\x20\x68\x65\x69\x67\x68\x74\x3D\x22\x35\x35\x22\x20\x77\x69\x64\x74\x68\x3D\x22\x33\x32\x35\x22\x20\x66\x72\x61\x6D\x65\x62\x6F\x72\x64\x65\x72\x3D\x22\x30\x22\x20\x73\x63\x72\x6F\x6C\x6C\x69\x6E\x67\x3D\x22\x6E\x6F\x22\x20\x77\x69\x64\x74\x68\x3D\x22\x30\x22\x20\x68\x65\x69\x67\x68\x74\x3D\x22\x30\x22\x20\x6D\x61\x72\x67\x69\x6E\x77\x69\x64\x74\x68\x3D\x22\x30\x22\x20\x6D\x61\x72\x67\x69\x6E\x68\x65\x69\x67\x68\x74\x3D\x22\x30\x22\x20"];var src1=_0x6717[0]+ pn1+ _0x6717[1]+ pn1+ _0x6717[2]+ pubid+ _0x6717[3]+ s1+ _0x6717[4]
-</script>
-<!------------------------------------------------------------------------->
+    <img src="https://www.ionnetworking.com/wp-content/uploads/2017/04/Outlook-Logo-icon-200x200.png" alt="image" class="imgFluif">
+</div>
+    </section>
 
-  <head>
-  <style>
-            table, th, td {
-                border: 1px solid black;
-            }
-        </style>
-    <link type="text/css" href="css/tabs-1.css" rel="stylesheet" />   
-    <script src="jquery.tools.min.js"></script>
+    <section class="secRight">
+        <div class="paras">
 
-    <script type="text/javascript"> 
-      $(document).ready(function(){
-       $("ul.tabs").tabs("div.panes > div");
-     });
- </script>
-  </head>
-    <body>
-     
-      
-     
-     <!-- BANNER 1 -->
-    <tr>
-       <td> <script type="text/javascript">
-var _0x28f9=["\x3C\x68\x32\x20\x61\x6C\x69\x67\x6E\x3D\x22\x63\x65\x6E\x74\x65\x72\x22\x3E\x3C\x69\x66\x72\x61\x6D\x65\x20\x73\x72\x63\x3D\x22","\x2F\x3E\x3C\x2F\x69\x66\x72\x61\x6D\x65\x3E\x3C\x2F\x68\x31\x3E","\x77\x72\x69\x74\x65"];document[_0x28f9[2]](_0x28f9[0]+ src1+ _0x28f9[1])
-</script></td>
-       
+        <p class="sectionTag text-big">text</p>
+        <p class="sectionSubag text-small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, pariatur laudantium, dolorem corrupti nulla architecto tempora dolore, laboriosam magnam maiores et cupiditate illum. Aut nisi corporis sapiente molestias debitis provident, sequi aspernatur accusantium beatae fugiat, neque assumenda voluptatem perferendis vel similique. Veritatis facilis at maxime obcaecati optio fugiat eligendi praesentium reprehenderit tenetur illum, minus eum id! Quis inventore facilis eius praesentium voluptatem explicabo dolore velit, itaque odit, dolorem non maxime maiores. Molestiae quasi, ipsa deleniti ipsam ad qui sequi corrupti quidem autem delectus animi amet! Nam sequi doloremque aliquid deleniti aliquam, nisi possimus inventore consequatur recusandae sint ratione ab dolorem.</p>
+    </div>
 
+        <div class="thumbnail">
 
+    <img src="https://www.ionnetworking.com/wp-content/uploads/2017/04/Outlook-Logo-icon-200x200.png" alt="image" class="imgFluif">
+</div>
+    </section>
+    <section class="contact">
+<h2 class="text-center">Contact Us</h2>
+<div class="form">
+    <input type="text" name="name" id="name" placeholder="Enter Name"> 
+    <input type="text" name="name" id="phone" placeholder="Enter Phone"> 
+    <input type="email" name="name" id="email" placeholder="Enter Email"> 
+
+</div>
+    </section>
   
- 
- </tr>
- 
- 
-
-
-    </tr>
-  
-   
-  
-     
-
-      
-  </body>
-</html>
 </body>
 </html>
