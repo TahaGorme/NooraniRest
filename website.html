@@ -7,9 +7,40 @@
     <title>Title</title>
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Oxygen', sans-serif;
+
+}
+.field {
+  width: 100%;
+  padding: 12px; 
+  border: 1px solid gray; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 5px; 
+  margin-bottom: 16px;
+  resize: vertical 
+}
+.submit {
+  background-color: #4c7faf;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: #2c379c;
+}
+
+.form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
 }
 
 .secRight{
@@ -74,6 +105,75 @@ font-family: 'Oxygen', sans-serif;
     font-family: 'Oxygen', sans-serif;
 
 }
+::-webkit-scrollbar {
+  width: 20px;
+}
+.btn {
+  background-color: green;
+  transition: transform 0.5s; /* Animation */
+  
+}
+html { scroll-behavior: smooth; }
+
+.btn:hover {
+  transform: scale(1.08); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.submit {
+  background-color: rgb(0, 89, 255);
+  transition: transform 0.5s; /* Animation */
+  
+}
+
+.submit:hover {
+  transform: scale(1.08); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+
+
+.nav-list li {
+  transition: transform 0.5s; /* Animation */
+  
+}
+
+.nav-list li:hover {
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.imgFluif {
+  background-color: rgb(0, 89, 255);
+  transition: transform 1s; /* Animation */
+  
+}
+
+.imgFluif:hover {
+  transform: scale(1.4); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: blue; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: cyan; 
+}
+::-moz-selection { /* Code for Firefox */
+  color: blue;
+  background: yellow;
+}
+
+::selection {
+  color: blue;
+  background: yellow;
+}
 .nav-list{
 width: 70%;
 /* background-color: black; */
@@ -135,7 +235,6 @@ background-blend-mode: darken;
 
 }
 .btn-dark{
-    
   color: black;
   border: 2px solid gray;
   font-family: 'Oxygen', sans-serif;
@@ -264,7 +363,7 @@ margin: 3px 3px;
     text-align: center;
 }
 #search{
-    width: 100% ;
+    visibility: hidden;
 }
 .burger{
     display: block;
@@ -295,6 +394,9 @@ height: 70px;
 
     text-align: center;
 }
+.btn-sm{
+    visibility: hidden;
+}
 .buttons{
     text-align: center;
 }
@@ -308,7 +410,7 @@ height: 70px;
     </style>
 </head>
 <body>
-    <nav class="navbar background h-nav" >
+    <nav class="navbar background h-nav">
 <ul class="nav-list v-class">
     <div class="logo"><img src="https://www.ionnetworking.com/wp-content/uploads/2017/04/Outlook-Logo-icon-200x200.png" alt="logo"></div>
 <li><a href="#home">Home</a></li>
@@ -322,7 +424,7 @@ height: 70px;
 <button class="btn btn-sm">Search</button>
 </div>
 
-<div class="burger" >
+<div class="burger">
     <div class="line"></div>
     <div class="line"></div>
     <div class="line"></div>
@@ -394,15 +496,16 @@ height: 70px;
     <img src="https://source.unsplash.com/900x900/?football" alt="image" class="imgFluif">
 </div>
     </section>
-    <section class="contact">
+    <section class="contact" id="contact">
 <h2 class="text-center">Contact Us</h2>
 <div class="form">
-    <input type="text" name="name" id="name" placeholder="Enter Name"> 
-    <input type="text" name="name" id="phone" placeholder="Enter Phone"> 
-    <input type="email" name="name" id="email" placeholder="Enter Email"> 
-    <textarea name="text" id="text" cols="30" rows="10" placeholder="More"></textarea>
-
-<button class="btn  btn-dark">Submit</button>
+    <label for="fname">First Name</label>
+    <input type="text" class="field" id="fname" name="firstname" placeholder="First Name">
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" class="field" name="lastname" placeholder="Last Name">
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" class="field" placeholder="Write something" style="height:200px"></textarea>
+    <button  class="submit" >Submit</button>
 </div>
     </section>
   <footer class="background">
