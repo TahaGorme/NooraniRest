@@ -1,53 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Title</title>
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
-
 *{
     margin: 0;
     padding: 0;
+}
+.secRight{
+     display: flex;
+     align-items: center;
+     justify-content: space-evenly;
+     max-width: 80%;
+     margin: auto;
+     font-family: 'Oxygen', sans-serif;
+
+}
+.contact{
+ height: 120vh;
+    background-color: #f6f5f4;
+}
+.form input{
+    width: 100%;
+    font-size: 18px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 5px;
     font-family: 'Oxygen', sans-serif;
 
 }
-.hero{
-    height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)),url("https://upload.wikimedia.org/wikipedia/commons/9/92/Youth-soccer-indiana.jpg");
-background-position: center;
-background-size: cover;
-overflow: hidden;
-position: relative;
+.form textarea{
+    width: 100%;
+    font-size: 18px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    margin: 15px 0;
+    padding: 5px;
+    font-family: 'Oxygen', sans-serif;
+
 }
-.nav-bar{
+.secLeft{
+     display: flex;
+     align-items: center;
+     justify-content: space-evenly;
+     max-width: 80%;
+     margin: auto;
+     flex-direction: row-reverse;
+     font-family: 'Oxygen', sans-serif;
+
+}
+
+.navbar{
     display: flex;
-    padding: 40px 120px;
+    justify-content: center;
+    align-items: center;
+     position: sticky;
+     top:0;
+     cursor: pointer;
 }
-.nav-logo img{
-    width: 135px;
-}
-.nav-links{
-    flex:1;
+.text-big{
+font-size: 40px;
+font-family: 'Oxygen', sans-serif;
 
 }
-.nav-links ul{
-    margin-left: 50px;
-    display: inline;
+.text-small{
+    font-size: 20px;
+    font-family: 'Oxygen', sans-serif;
+
 }
-.nav-links ul li{
+.nav-list{
+width: 70%;
+/* background-color: black; */
+display: flex;
+align-items: center;
+}
+.btn{
+     padding: 8px 20px;
+     margin :8px 3px;
+     border: 2px solid white;
+     border-radius: 5px;
+     background: none;
+     color: white;
+     cursor: pointer;
+     font-family: 'Oxygen', sans-serif;
+
+}
+.btn:hover{
+     border: 2px solid white;
+     border-radius: 5px;
+     background: white;
+     color: black;
+     cursor: pointer;
+     font-family: 'Oxygen', sans-serif;
+
+}
+.btn-sm{
+     padding: 6px 10px;
+     vertical-align: middle;;
+     font-family: 'Oxygen', sans-serif;
+
+}
+.logo{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    width: 33%;
+    border: 3px solid tomato;
+    border-radius: 50%;
+ 
+}
+.text-footer{
+    text-align: center;
+    padding: 25px;
+    font-family: 'Oxygen', sans-serif;
+ color: white;
+}
+.nav-list li{
 list-style: none;
-display: inline-block;
-padding: 8px 25px;
+padding: 26px 30px;
 }
-.nav-links ul a{
-  color: white;
-  text-decoration: none;
-  font-size: 13px;
+.background{
+    background: rgba(0, 0, 0, 0.7) url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Youth-soccer-indiana.jpg/1200px-Youth-soccer-indiana.jpg');
+background-size: cover;
+background-blend-mode: darken;
 
 }
-.nav-links ul li::after{
+.btn-dark{
+    
+  color: black;
+  border: 2px solid gray;
+  font-family: 'Oxygen', sans-serif;
+}
+.btn-dark:hover{
+    
+    color: black;
+    border: 2px solid black;
+    background-color: lightgrey;
+    font-family: 'Oxygen', sans-serif;
+  }
+.nav-list li::after{
  content: '';
  width: 0;
  height: 2px;
@@ -57,189 +156,270 @@ padding: 8px 25px;
  transition: 1s;
   
 }
-.nav-links ul li:hover:after{
+
+.nav-list li:hover:after{
     width: 100%;
 
 }
-.btn{
-    padding: 10px 20px;
-    border: 0;
-    background: yellow;
-    font-weight: bold;
-    cursor: pointer;
-}
-.nav-links .btn{
-    float: right;
+.nav-list li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-family: 'Oxygen', sans-serif;
 
 }
-.banner-title{
-    margin: 80px 130px;
-    color: white;
+
+.rightNav{
+    /* background-color: teal; */
+    width: 30%;
+    text-align: right;
+    padding: 0 23px;
 }
-.banner-title h1{
-font-size: 64px;
-margin-bottom: 30px;
-}
-.banner-title h1 span{
-color: yellow;
-}
-.vertical-bar{
-    height: 100%;
-    background: black;
-    top: 0;
-    left: 0;
-    position: absolute;
-}
-.search-icon{
-    height: 60%;
-    width: 80px;
+.firstSection{
+    height: 100vh;
 }
 
-.search-icon img{
-    margin: 45px 23px;
-    display: block;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
+.firstHalf{
+width: 80%;
+display: flex;
+flex-direction: column;
+justify-content: center;
 }
-.social-icons{
-    height: 35%;
-    width: 80px;
-    display: block;
-    background: yellow;
+.secondHalf{
+width: 30%;
+}
+.form{
+    max-width: 60%;
+    margin: auto;
+}
+#search{
+    padding: 5px;
+    font-size: 17px;
+    border: 2px solid gray;
+    border-radius: 9px;
+    font-family: 'Oxygen', sans-serif;
+
+}
+.text-center{
     text-align: center;
-    padding-top: 27%;
-    bottom: 0;
-    position: absolute;
+    padding: 30px;
+    font-size: 30px;
+    font-family: 'Oxygen', sans-serif;
+
 }
-.social-icons img{
-    margin: 15px 23px;
-    display: block;
-    padding:8px;
-}
-.notifications{
+.box-main{
     display: flex;
-    width: 400px;
-    right: 0;
-    bottom: 0;
-    position: absolute;
-    background: yellow;
+    justify-content: center;
     align-items: center;
+    color: white;
+    font-family: 'Oxygen', sans-serif;
+    max-width: 50%;
+    margin: auto;
+    height: 75%;
 }
-.contents{
-    flex-basis: 50%;
-    padding: 10px;
+.secondHalf img{
+    width: 80%;
+    border-radius: 150px;
+    border: 2px solid white;
+}
+.paras{
+    padding: 0px 65px;
+}
+.thumbnail img{
+    width: 250px;
+    border-radius: 25px;
+    border: 1px solid black;
+    margin-top: 20px;
+}
+.sectionTag{
+    padding: 16px 0;
+}
+
+
+.burger{
+    display: none;
+position: absolute;
+cursor: pointer;
+right: 5%;
+top: 15px;
+}
+.line{
+    width: 33px;
+background-color: white;
+height: 4px;
+margin: 3px 3px;
+}
+@media only screen and (max-width: 1200px){
+.nav-list{
+    flex-direction: column;
+}
+.navbar{
+    flex-direction: column;
+    transition:all 1s ease-out;
+    height: 480px;
 
 }
-.close{
-display: none;
+.rightNav{
+    text-align: center;
 }
-.notifications-img{
-flex-basis: 50%;
+#search{
+    width: 100% ;
+}
+.burger{
+    display: block;
+}
+.h-nav{
+height: 70px;
+}
+.v-class{
+    opacity: 0;
+}
+.box-main{
+    flex-direction: column-reverse;
+    max-width: 100%;
+}
+.secLeft{
+    flex-direction: column-reverse;
+}
+.secRight{
+    flex-direction: column-reverse;
+}
+.text-big{
+    font-size: 30px;
+
+    text-align: center;
+}
+.text-small{
+    font-size: 10px;
+
+    text-align: center;
+}
+.buttons{
+    text-align: center;
 }
 
-@media(max-width: 700px){
-    .vertical-bar{
-        display: none  ;
-    }
-    .banner-title{
-        margin: 80px 40px;
-    }
-    .banner-title h1{
-        font-size: 50px;
-    }
-    .nav-bar{
-        padding: 10px 30px;
-    }
-    .menu{
-        position: absolute;
-        right: 20px;
-        top: 10px;
-    }
-    .close{
-        display: block;
-        color: white;
-        margin: 10px 25px;
-        font-size: 22px;
-    }
-    .nav-links{
-        height: 100vh;
-        width: 200px;
-        background: black;
-        top: 0;
-        right: -200px;
-        position: absolute ;
-        text-align: left;
-        z-index: 2;
-transition: 1s;
-    }
-    .nav-links ul a{
-        display: block;
-    }
-    .nav-links .btn{
-        float: none;
-        margin-left: 25px;
-        margin-top: 10px;
-
-    }
-
 }
+
+
+
     </style>
 </head>
 <body>
-    <div class="hero">
-<div class="nav-bar">
-    <div class="nav-logo">
-        <img src="https://techcrunch.com/wp-content/uploads/2018/07/logo-2.png?w=300" alt="logo">
-    </div>
-
-    <div class="nav-links" id=nav>
-        <img src="https://www.iconsdb.com/icons/preview/white/x-mark-xxl.png"  onclick="hideMenu()" alt="menu" width="20px"height="20px" class="close">
-
-<ul>
-    <a href="#"><li>Home</li></a>
-    <a href="#"><li>About</li></a>
-    <a href="#"><li>Contact</li></a>
-
+    <nav class="navbar background h-nav">
+<ul class="nav-list v-class">
+    <div class="logo"><img src="https://www.ionnetworking.com/wp-content/uploads/2017/04/Outlook-Logo-icon-200x200.png" alt="logo"></div>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
 
 </ul>
-<button class="btn">Sign Up</button>
+<div class="rightNav v-class">
+    <input type="text" name="search" id=search>
+<button class="btn btn-sm">Search</button>
+</div>
+
+<div class="burger">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+
+</div>
+
+    </nav>
+
+    <section class="background firstSection">
+<div class="box-main">
+
+    <div class="firstHalf">
+
+        <p class="text-big">Text</p>
+        <p class="text-small">Some big text or a paragraph which has to be big</p>
+<div class="buttons">
+
+    <button class="btn">Text</button>
+    <button class="btn">Text two</button>
+
+</div>
+    </div>
+    <div class="secondHalf">
+<img src="https://www.ionnetworking.com/wp-content/uploads/2017/04/Outlook-Logo-icon-200x200.png" alt="Image">
+
     </div>
 </div>
-<img src="https://www.iconsdb.com/icons/preview/white/menu-4-xxl.png" onclick="showMenu()" alt="menu" width="20px"height="20px" class="menu">
 
-<div class="banner-title">
-    <h1>Lorem <span>ipsum dolor <br> amet consectetur</span> adipisicing elit.</h1>
-    <button type="button"class="btn">Text</button>
+    </section>
+    <section class="secRight">
+        <div class="paras">
+
+        <p class="sectionTag text-big">Cricket</p>
+        <p class="sectionSubTag text-small">Cricket is a bat-and-ball game played between two teams of eleven players on a field at the centre of which is a 22-yard (20-metre) pitch with a wicket at each end, each comprising two bails balanced on three stumps. The batting side scores runs by striking the ball bowled at the wicket with the bat (and running between the wickets), while the bowling and fielding side tries to prevent this (by preventing the ball from leaving the field, and getting the ball to either wicket) and dismiss each batter (so they are "out"). Means of dismissal include being bowled, when the ball hits the stumps and dislodges the bails, and by the fielding side either catching the ball after it is hit by the bat, but before it hits the ground, or hitting a wicket with the ball before a batter can cross the crease in front of the wicket. When ten batters have been dismissed, the innings ends and the teams swap roles. The game is adjudicated by two umpires, aided by a third umpire and match referee in international matches. They communicate with two off-field scorers who record the match's statistical information.
+
+        </p>
+    </div>
+
+        <div class="thumbnail">
+
+    <img src="https://source.unsplash.com/900x900/?cricket" alt="image" class="imgFluif">
 </div>
-<div class="vertical-bar">
-<div class="search-icon">
-    <img src="https://www.iconsdb.com/icons/preview/white/list-rich-xxl.png" alt="list" width="40%">
+    </section>
 
-    <img src="https://www.iconsdb.com/icons/preview/white/search-13-xl.png" alt="search" width="40%">
+    <section class="secLeft">
+        <div class="paras">
+
+        <p class="sectionTag text-big">Basketball</p>
+        <p class="sectionSubag text-small">Basketball, colloquially referred to as hoops, is a team sport in which two teams, most commonly of five players each, opposing one another on a rectangular court, compete with the primary objective of shooting a basketball (approximately 9.4 inches (24 cm) in diameter) through the defender's hoop (a basket 18 inches (46 cm) in diameter mounted 10 feet (3.048 m) high to a backboard at each end of the court) while preventing the opposing team from shooting through their own hoop. A field goal is worth two points, unless made from behind the three-point line, when it is worth three. After a foul, timed play stops and the player fouled or designated to shoot a technical foul is given one or more one-point free throws. The team with the most points at the end of the game wins, but if regulation play expires with the score tied, an additional period of play (overtime) is mandated</p>
+    </div>
+
+        <div class="thumbnail">
+
+    <img src="https://source.unsplash.com/900x900/?basketball" alt="image" class="imgFluif">
 </div>
-<div class="social-icons">
-    <img src="https://www.iconsdb.com/icons/preview/white/list-rich-xxl.png" alt="list" width="30%">
+    </section> 
 
-    <img src="https://www.iconsdb.com/icons/preview/white/search-13-xl.png" alt="search" width="30%">
-    <img src="https://www.iconsdb.com/icons/preview/white/list-rich-xxl.png" alt="list" width="30%">
+    <section class="secRight">
+        <div class="paras">
 
-    <img src="https://www.iconsdb.com/icons/preview/white/search-13-xl.png" alt="search" width="30%">
-   </div>
-   </div>
+        <p class="sectionTag text-big">Football</p>
+        <p class="sectionSubag text-small">Football is a family of team sports that involve, to varying degrees, kicking a ball to score a goal. Unqualified, the word football normally means the form of football that is the most popular where the word is used. Sports commonly called football include association football (known as soccer in some countries); gridiron football (specifically American football or Canadian football); Australian rules football; rugby football (either rugby union or rugby league); and Gaelic football.[1][2] These various forms of football share to varying extent common origins and are known as football codes.
 
+        </p>
+    </div>
+
+        <div class="thumbnail">
+
+    <img src="https://source.unsplash.com/900x900/?football" alt="image" class="imgFluif">
 </div>
-<script>
-var show=document.getElementById("nav");
-    function showMenu(){
-show.style.right="0";
+    </section>
+    <section class="contact">
+<h2 class="text-center">Contact Us</h2>
+<div class="form">
+    <input type="text" name="name" id="name" placeholder="Enter Name"> 
+    <input type="text" name="name" id="phone" placeholder="Enter Phone"> 
+    <input type="email" name="name" id="email" placeholder="Enter Email"> 
+    <textarea name="text" id="text" cols="30" rows="10" placeholder="More"></textarea>
 
-    }
+<button class="btn  btn-dark">Submit</button>
+</div>
+    </section>
+  <footer class="background">
+      <p class="text-footer">Copyright &copy; 2020 WebsiteName - All rights Reserved.
+    </p>
 
-    function hideMenu(){
-show.style.right="-200px";
+  </footer>
+  <script>
 
-    }
-</script>
+burger=document.querySelector('.burger')
+navbar=document.querySelector('.navbar')
+rightNav=document.querySelector('.nav-list')
+navList=document.querySelector('.rightNav')
+
+  burger.addEventListener('click',()=>{
+    rightNav.classList.toggle('v-class')
+    navList.classList.toggle('v-class')
+    navbar.classList.toggle('h-nav')
+
+  })
+  </script>
 </body>
 </html>
