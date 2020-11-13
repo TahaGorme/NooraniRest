@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Oxygen', sans-serif;
+
+}
+.hero{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)),url("https://upload.wikimedia.org/wikipedia/commons/9/92/Youth-soccer-indiana.jpg");
+background-position: center;
+background-size: cover;
+overflow: hidden;
+position: relative;
+}
+.nav-bar{
+    display: flex;
+    padding: 40px 120px;
+}
+.nav-logo img{
+    width: 135px;
+}
+.nav-links{
+    flex:1;
+
+}
+.nav-links ul{
+    margin-left: 50px;
+    display: inline;
+}
+.nav-links ul li{
+list-style: none;
+display: inline-block;
+padding: 8px 25px;
+}
+.nav-links ul a{
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+
+}
+.nav-links ul li::after{
+ content: '';
+ width: 0;
+ height: 2px;
+ background: yellow;
+ display: block;
+ margin: auto;
+ transition: 1s;
+  
+}
+.nav-links ul li:hover:after{
+    width: 100%;
+
+}
+.btn{
+    padding: 10px 20px;
+    border: 0;
+    background: yellow;
+    font-weight: bold;
+    cursor: pointer;
+}
+.nav-links .btn{
+    float: right;
+
+}
+.banner-title{
+    margin: 80px 130px;
+    color: white;
+}
+.banner-title h1{
+font-size: 64px;
+margin-bottom: 30px;
+}
+.banner-title h1 span{
+color: yellow;
+}
+.vertical-bar{
+    height: 100%;
+    background: black;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+.search-icon{
+    height: 60%;
+    width: 80px;
+}
+
+.search-icon img{
+    margin: 45px 23px;
+    display: block;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+.social-icons{
+    height: 35%;
+    width: 80px;
+    display: block;
+    background: yellow;
+    text-align: center;
+    padding-top: 27%;
+    bottom: 0;
+    position: absolute;
+}
+.social-icons img{
+    margin: 15px 23px;
+    display: block;
+    padding:8px;
+}
+.notifications{
+    display: flex;
+    width: 400px;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background: yellow;
+    align-items: center;
+}
+.contents{
+    flex-basis: 50%;
+    padding: 10px;
+
+}
+.close{
+display: none;
+}
+.notifications-img{
+flex-basis: 50%;
+}
+
+@media(max-width: 700px){
+    .vertical-bar{
+        display: none  ;
+    }
+    .banner-title{
+        margin: 80px 40px;
+    }
+    .banner-title h1{
+        font-size: 50px;
+    }
+    .nav-bar{
+        padding: 10px 30px;
+    }
+    .menu{
+        position: absolute;
+        right: 20px;
+        top: 10px;
+    }
+    .close{
+        display: block;
+        color: white;
+        margin: 10px 25px;
+        font-size: 22px;
+    }
+    .nav-links{
+        height: 100vh;
+        width: 200px;
+        background: black;
+        top: 0;
+        right: -200px;
+        position: absolute ;
+        text-align: left;
+        z-index: 2;
+transition: 1s;
+    }
+    .nav-links ul a{
+        display: block;
+    }
+    .nav-links .btn{
+        float: none;
+        margin-left: 25px;
+        margin-top: 10px;
+
+    }
+
+}
+    </style>
+</head>
+<body>
+    <div class="hero">
+<div class="nav-bar">
+    <div class="nav-logo">
+        <img src="https://techcrunch.com/wp-content/uploads/2018/07/logo-2.png?w=300" alt="logo">
+    </div>
+
+    <div class="nav-links" id=nav>
+        <img src="https:/www.iconsdb.com/icons/preview/white/x-mark-xxl.png/"  onclick="hideMenu()" alt="menu" width="20px"height="20px" class="close">
+
+<ul>
+    <a href="#"><li>Home</li></a>
+    <a href="#"><li>About</li></a>
+    <a href="#"><li>Contact</li></a>
+
+
+</ul>
+<button class="btn">Sign Up</button>
+    </div>
+</div>
+<img src="https://www.iconsdb.com/icons/preview/white/menu-4-xxl.png" onclick="showMenu()" alt="menu" width="20px"height="20px" class="menu">
+
+<div class="banner-title">
+    <h1>Lorem <span>ipsum dolor <br> amet consectetur</span> adipisicing elit.</h1>
+    <button type="button"class="btn">Text</button>
+</div>
+<div class="vertical-bar">
+<div class="search-icon">
+    <img src="https://www.iconsdb.com/icons/preview/white/list-rich-xxl.png" alt="list" width="40%">
+
+    <img src="https://www.iconsdb.com/icons/preview/white/search-13-xl.png" alt="search" width="40%">
+</div>
+<div class="social-icons">
+    <img src="https://www.iconsdb.com/icons/preview/white/list-rich-xxl.png" alt="list" width="30%">
+
+    <img src="https://www.iconsdb.com/icons/preview/white/search-13-xl.png" alt="search" width="30%">
+    <img src="https://www.iconsdb.com/icons/preview/white/list-rich-xxl.png" alt="list" width="30%">
+
+    <img src="https://www.iconsdb.com/icons/preview/white/search-13-xl.png" alt="search" width="30%">
+   </div>
+   </div>
+
+</div>
+<script>
+var show=document.getElementById("nav");
+    function showMenu(){
+show.style.right="0";
+
+    }
+
+    function hideMenu(){
+show.style.right="-200px";
+
+    }
+</script>
+</body>
+</html>
