@@ -1,247 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Document</title>
     <style>
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
 
 *{
     margin: 0;
     padding: 0;
-}
-.secRight{
-     height: 500px;
-     display: flex;
-     align-items: center;
-     justify-content: space-evenly;
-     max-width: 80%;
-     margin: auto;
-}
-.contact{
- height: 90vh;
-    background-color: #f6f5f4;
-}
-.form input{
-    width: 100%;
-    font-size: 18px;
-    border: 2px solid gray;
-    border-radius: 5px;
-    margin: 15px 0;
-    padding: 5px;
-}
-.secLeft{
-     height: 500px;
-     display: flex;
-     align-items: center;
-     justify-content: space-evenly;
-     max-width: 80%;
-     margin: auto;
-     flex-direction: row-reverse;
-}
-.navbar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-     position: sticky;
-     top:0;
-     cursor: pointer;
-}
-.text-big{
-font-size: 40px;
-}
-.text-small{
-    font-size: 20px;
+    font-family: 'Oxygen', sans-serif;
 
 }
-.nav-list{
-width: 50%;
-/* background-color: black; */
-display: flex;
-align-items: center;
+.hero{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)),url("https://upload.wikimedia.org/wikipedia/commons/9/92/Youth-soccer-indiana.jpg");
+background-position: center;
+background-size: cover;
+overflow: hidden;
+position: relative;
+}
+.nav-bar{
+    display: flex;
+    padding: 40px 120px;
+}
+.nav-logo img{
+    width: 135px;
+}
+.nav-links{
+    flex:1;
+
+}
+.nav-links ul{
+    margin-left: 50px;
+    display: inline;
+}
+.nav-links ul li{
+list-style: none;
+display: inline-block;
+padding: 8px 25px;
+}
+.nav-links ul a{
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+
+}
+.nav-links ul li::after{
+ content: '';
+ width: 0;
+ height: 2px;
+ background: yellow;
+ display: block;
+ margin: auto;
+ transition: 1s;
+  
+}
+.nav-links ul li:hover:after{
+    width: 100%;
+
 }
 .btn{
-     padding: 8px 20px;
-     margin :8px 3px;
-     border: 2px solid white;
-     border-radius: 5px;
-     background: none;
-     color: white;
-     cursor: pointer;
+    padding: 10px 20px;
+    border: 0;
+    background: yellow;
+    font-weight: bold;
+    cursor: pointer;
 }
-.btn-sm{
-     padding: 6px 10px;
-     vertical-align: middle;;
-   
-}
-.logo{
-    width: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.logo img{
-    width: 33%;
-    border: 3px solid tomato;
-    border-radius: 50%;
- 
-}
-.nav-list li{
-list-style: none;
-padding: 26px 30px;
-}
-.background{
-    background: rgba(0, 0, 0, 0.7) url('https://previews.123rf.com/images/artinspiring/artinspiring1911/artinspiring191100231/133251808-people-talk-using-speech-bubble-group-of-happy-people-chatting-.jpg');
-background-size: cover;
-background-blend-mode: darken;
+.nav-links .btn{
+    float: right;
 
 }
-.nav-list li a:hover{
-    color: gray;
-}
-.nav-list li a{
-    text-decoration: none;
+.banner-title{
+    margin: 80px 130px;
     color: white;
 }
-.rightNav{
-    /* background-color: teal; */
-    width: 50%;
-    text-align: right;
-    padding: 0 23px;
+.banner-title h1{
+font-size: 64px;
+margin-bottom: 30px;
 }
-.firstSection{
-    height: 100vh;
+.banner-title h1 span{
+color: yellow;
 }
-.firstHalf{
-width: 80%;
-display: flex;
-flex-direction: column;
-justify-content: center;
+.vertical-bar{
+    height: 100%;
+    background: black;
+    top: 0;
+    left: 0;
+    position: absolute;
 }
-.secondHalf{
-width: 30%;
+.search-icon{
+    height: 60%;
+    width: 80px;
 }
-.form{
-    max-width: 500px;
-    margin: auto;
-}
-#search{
-    padding: 5px;
-    font-size: 17px;
-    border: 2px solid gray;
-    border-radius: 9px;
-}
-.text-center{
-    text-align: center;
-    padding: 30px;
+
+.search-icon img{
+    margin: 45px 23px;
+    display: block;
+    color: white;
     font-size: 30px;
+    cursor: pointer;
 }
-.box-main{
+.social-icons{
+    height: 35%;
+    width: 80px;
+    display: block;
+    background: yellow;
+    text-align: center;
+    padding-top: 27%;
+    bottom: 0;
+    position: absolute;
+}
+.social-icons img{
+    margin: 15px 23px;
+    display: block;
+    padding:8px;
+}
+.notifications{
     display: flex;
-    justify-content: center;
+    width: 400px;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background: yellow;
     align-items: center;
-    color: white;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    max-width: 50%;
-    margin: auto;
-    height: 75%;
 }
-.secondHalf img{
-    width: 80%;
-    border-radius: 150px;
-    border: 2px solid white;
+.contents{
+    flex-basis: 50%;
+    padding: 10px;
+
 }
-.paras{
-    padding: 0px 65px;
+.close{
+display: none;
+}
+.notifications-img{
+flex-basis: 50%;
+}
+
+@media(max-width: 700px){
+    .vertical-bar{
+        display: none  ;
+    }
+    .banner-title{
+        margin: 80px 40px;
+    }
+    .banner-title h1{
+        font-size: 50px;
+    }
+    .nav-bar{
+        padding: 10px 30px;
+    }
+    .menu{
+        position: absolute;
+        right: 20px;
+        top: 10px;
+    }
+    .close{
+        display: block;
+        color: white;
+        margin: 10px 25px;
+        font-size: 22px;
+    }
+    .nav-links{
+        height: 100vh;
+        width: 200px;
+        background: black;
+        top: 0;
+        right: -200px;
+        position: absolute ;
+        text-align: left;
+        z-index: 2;
+transition:     ;
+    }
+    .nav-links ul a{
+        display: block;
+    }
+    .nav-links .btn{
+        float: none;
+        margin-left: 25px;
+        margin-top: 10px;
+
+    }
+
 }
     </style>
 </head>
 <body>
-    <nav class="navbar background">
-<ul class="nav-list">
-    <div class="logo"><img src="https://www.ionnetworking.com/wp-content/uploads/2017/04/Outlook-Logo-icon-200x200.png" alt="logo"></div>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#contact">Contact Us</a></li>
+    <div class="hero">
+<div class="nav-bar">
+    <div class="nav-logo">
+        <img src="https://techcrunch.com/wp-content/uploads/2018/07/logo-2.png?w=300" alt="logo">
+    </div>
+
+    <div class="nav-links" id=nav>
+        <img src="https://www.iconsdb.com/icons/preview/white/x-mark-xxl.png"  onclick="hideMenu()" alt="menu" width="20px"height="20px" class="close">
+
+<ul>
+    <a href="#"><li>Home</li></a>
+    <a href="#"><li>About</li></a>
+    <a href="#"><li>Contact</li></a>
+
 
 </ul>
-<div class="rightNav">
-    <input type="text" name="search" id=search>
-<button class="btn btn-sm">Search</button>
-</div>
-
-    </nav>
-
-    <section class="background firstSection">
-<div class="box-main">
-
-    <div class="firstHalf">
-
-        <p class="text-big">Text</p>
-        <p class="text-small">Some big text or a paragraph which has to be big</p>
-<div class="buttons">
-
-    <button class="btn">Text</button>
-    <button class="btn">Text two</button>
-
-</div>
-    </div>
-    <div class="secondHalf">
-<img src="https://www.ionnetworking.com/wp-content/uploads/2017/04/Outlook-Logo-icon-200x200.png" alt="Image">
-
+<button class="btn">Sign Up</button>
     </div>
 </div>
+<img src="https://www.iconsdb.com/icons/preview/white/menu-4-xxl.png" onclick="showMenu()" alt="menu" width="20px"height="20px" class="menu">
 
-    </section>
-    <section class="secRight">
-        <div class="paras">
-
-        <p class="sectionTag text-big">text</p>
-        <p class="sectionSubag text-small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, pariatur laudantium, dolorem corrupti nulla architecto tempora dolore, laboriosam magnam maiores et cupiditate illum. Aut nisi corporis sapiente molestias debitis provident, sequi aspernatur accusantium beatae fugiat, neque assumenda voluptatem perferendis vel similique. Veritatis facilis at maxime obcaecati optio fugiat eligendi praesentium reprehenderit tenetur illum, minus eum id! Quis inventore facilis eius praesentium voluptatem explicabo dolore velit, itaque odit, dolorem non maxime maiores. Molestiae quasi, ipsa deleniti ipsam ad qui sequi corrupti quidem autem delectus animi amet! Nam sequi doloremque aliquid deleniti aliquam, nisi possimus inventore consequatur recusandae sint ratione ab dolorem.</p>
-    </div>
-
-        <div class="thumbnail">
-
-    <img src="https://www.ionnetworking.com/wp-content/uploads/2017/04/Outlook-Logo-icon-200x200.png" alt="image" class="imgFluif">
+<div class="banner-title">
+    <h1>Lorem <span>ipsum dolor <br> amet consectetur</span> adipisicing elit.</h1>
+    <button type="button"class="btn">Text</button>
 </div>
-    </section>
+<div class="vertical-bar">
+<div class="search-icon">
+    <img src="https://www.iconsdb.com/icons/preview/white/list-rich-xxl.png" alt="list" width="40%">
 
-    <section class="secLeft">
-        <div class="paras">
-
-        <p class="sectionTag text-big">text</p>
-        <p class="sectionSubag text-small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, pariatur laudantium, dolorem corrupti nulla architecto tempora dolore, laboriosam magnam maiores et cupiditate illum. Aut nisi corporis sapiente molestias debitis provident, sequi aspernatur accusantium beatae fugiat, neque assumenda voluptatem perferendis vel similique. Veritatis facilis at maxime obcaecati optio fugiat eligendi praesentium reprehenderit tenetur illum, minus eum id! Quis inventore facilis eius praesentium voluptatem explicabo dolore velit, itaque odit, dolorem non maxime maiores. Molestiae quasi, ipsa deleniti ipsam ad qui sequi corrupti quidem autem delectus animi amet! Nam sequi doloremque aliquid deleniti aliquam, nisi possimus inventore consequatur recusandae sint ratione ab dolorem.</p>
-    </div>
-
-        <div class="thumbnail">
-
-    <img src="https://www.ionnetworking.com/wp-content/uploads/2017/04/Outlook-Logo-icon-200x200.png" alt="image" class="imgFluif">
+    <img src="https://www.iconsdb.com/icons/preview/white/search-13-xl.png" alt="search" width="40%">
 </div>
-    </section>
+<div class="social-icons">
+    <img src="https://www.iconsdb.com/icons/preview/white/list-rich-xxl.png" alt="list" width="30%">
 
-    <section class="secRight">
-        <div class="paras">
+    <img src="https://www.iconsdb.com/icons/preview/white/search-13-xl.png" alt="search" width="30%">
+    <img src="https://www.iconsdb.com/icons/preview/white/list-rich-xxl.png" alt="list" width="30%">
 
-        <p class="sectionTag text-big">text</p>
-        <p class="sectionSubag text-small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, pariatur laudantium, dolorem corrupti nulla architecto tempora dolore, laboriosam magnam maiores et cupiditate illum. Aut nisi corporis sapiente molestias debitis provident, sequi aspernatur accusantium beatae fugiat, neque assumenda voluptatem perferendis vel similique. Veritatis facilis at maxime obcaecati optio fugiat eligendi praesentium reprehenderit tenetur illum, minus eum id! Quis inventore facilis eius praesentium voluptatem explicabo dolore velit, itaque odit, dolorem non maxime maiores. Molestiae quasi, ipsa deleniti ipsam ad qui sequi corrupti quidem autem delectus animi amet! Nam sequi doloremque aliquid deleniti aliquam, nisi possimus inventore consequatur recusandae sint ratione ab dolorem.</p>
-    </div>
-
-        <div class="thumbnail">
-
-    <img src="https://www.ionnetworking.com/wp-content/uploads/2017/04/Outlook-Logo-icon-200x200.png" alt="image" class="imgFluif">
-</div>
-    </section>
-    <section class="contact">
-<h2 class="text-center">Contact Us</h2>
-<div class="form">
-    <input type="text" name="name" id="name" placeholder="Enter Name"> 
-    <input type="text" name="name" id="phone" placeholder="Enter Phone"> 
-    <input type="email" name="name" id="email" placeholder="Enter Email"> 
+    <img src="https://www.iconsdb.com/icons/preview/white/search-13-xl.png" alt="search" width="30%">
+   </div>
+   </div>
 
 </div>
-    </section>
-  
+<script>
+var show=document.getElementById("nav");
+    function showMenu(){
+show.style.right="0";
+
+    }
+
+    function hideMenu(){
+show.style.right="-200px";
+
+    }
+</script>
 </body>
 </html>
