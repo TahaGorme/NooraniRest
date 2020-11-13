@@ -12,7 +12,9 @@
     margin: 0;
     padding: 0;
     font-family: 'Oxygen', sans-serif;
-
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 .field {
   width: 100%;
@@ -403,8 +405,60 @@ height: 70px;
 .paras{
     padding: 5px;
 }
+.btn-hover {
+    padding: 6px 15px;
+
+  cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 10px;
+    -o-moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+}
+.btn-hover {
+    padding: 12px 30px;
+
+  cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 10px;
+    -o-moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
 }
 
+.btn-hover:hover {
+    background-position: 100% 0;
+    -o-moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+.btn-hover.color-1 {
+    background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
 
 
     </style>
@@ -505,8 +559,10 @@ height: 70px;
     <input type="text" id="lname" class="field" name="lastname" placeholder="Last Name">
     <label for="subject">Subject</label>
     <textarea id="subject" name="subject" class="field" placeholder="Write something" style="height:200px"></textarea>
-    <button  class="submit" >Submit</button>
+       <button class="btn-hover color-1">Submit</button>
+
 </div>
+
     </section>
   <footer class="background">
       <p class="text-footer">Copyright &copy; 2020 WebsiteName - All rights Reserved.
