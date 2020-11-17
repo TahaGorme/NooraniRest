@@ -1,80 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Title</title>
+        <style>
+          
+body {
+  -webkit-transition: background-color 0.5s linear;
+  -moz-transition: background-color .5s linear;
+  -o-transition: background-color .5s linear;
+  -ms-transition: background-color .5s linear;
+  transition: background-color .5s linear;
+}
 
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <style>
-
+.navigationBarTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  cursor: pointer;
+  z-index: 1;
+}
 
 button {
   cursor: pointer;
   outline: none;
-
 }
- .outline {
-        background: transparent;
-        color: #007aff;
-        border-color: #007aff;
-        border-style: solid;
-        border-width: 2px;
-        border-radius: 5px;
-      padding: 8px 20px;
-        transition: all 0.3s linear;
-        margin :8px 3px;        
 
-    }
-   .outline:hover {
-        color: white;
-        background: #007aff;
-        transition: all 0.3s linear;
-    }
-    .outline1 {
-        background: transparent;
-        color: #007aff;
-        border-color: #007aff;
-        border-style: solid;
-        border-width: 2px;
-        transition: all 0.3s linear;
-        border-radius: 0;
-          display: inline-block;
-          padding: 8px;
-          text-align: center;
-          cursor: pointer;
-          width: 100%;
-          font-size: 18px;
-    }
-   .outline1:hover {
-        color: white;
-        background: #007aff;
-        transition: all 0.3s linear;
-    }
-.switchDark
-{
+.progress-bar {
+  height: 5px;
+  background: #007aff;
+  
+  position: fixed;
+  top: 70px;
+  z-index: 2;
+  width: 0%;
+}
+
+.outline {
+  background: transparent;
+  color: #007aff;
+  border-color: #007aff;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  padding: 8px 20px;
+  transition: all 0.3s linear;
+  margin: 8px 3px;
+}
+
+.outline:hover {
+  color: white;
+  background: #007aff;
+  transition: all 0.3s linear;
+}
+
+.outline1 {
+  background: transparent;
+  color: #007aff;
+  border-color: #007aff;
+  border-style: solid;
+  border-width: 2px;
+  transition: all 0.3s linear;
+  border-radius: 0;
+  display: inline-block;
+  padding: 8px;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.outline1:hover {
+  color: white;
+  background: #007aff;
+  transition: all 0.3s linear;
+}
+
+.switchDark {
   margin: 10px;
-    position: relative;
-    width: 72.5px;
-    height: 37px;
-    border-radius: 40px;
+  position: relative;
+  width: 72.5px;
+  height: 37px;
+  border-radius: 40px;
 }
+
 .dark-mode {
   background-color: #121212;
   color: lightgray;
 }
+
 .btn {
   padding: 8px 20px;
-   margin :8px 3px;        
-  cursor: pointer;   
+  margin: 8px 3px;
+  cursor: pointer;
   border: 2px solid black;
   background-color: white;
   color: black;
   border-radius: 5px;
 }
+
 .success {
-  border-color:#355eaa;
+  border-color: #355eaa;
   color: #467bdc;
   background-color: white;
 }
@@ -83,1192 +113,1229 @@ button {
   background-color: #467bdc;
   color: white;
 }
-input[type="checkbox"]
-{
-  
+
+input[type="checkbox"] {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: 0px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+#darkmodeswitch span {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  overflow: hidden;
+  opacity: 1;
+  background-color: #fff;
+  box-shadow: 0px 2px 25px gray;
+  border-radius: 40px;
+  transition: 0.2s ease background-color, 0.2s ease opacity;
+}
+
+#darkmodeswitch span:before,#darkmodeswitch span:after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  transition: 0.5s ease transform, 0.2s ease background-color;
+}
+
+#darkmodeswitch span:before {
+  background-color: #fff;
+  transform: translate(-29px,0px);
+  z-index: 1;
+}
+
+#darkmodeswitch span:after {
+  background-color: #3e50b4;
+  transform: translate(4px,0px);
+  z-index: 0;
+}
+
+#darkmodeswitch input[type="checkbox"]:checked + span {
+  background-color: #121212;
+}
+
+#darkmodeswitch input[type="checkbox"]:active + span {
+  opacity: 1;
+}
+
+#darkmodeswitch input[type="checkbox"]:checked + span:before {
+  background-color: #121212;
+  transform: translate(28px,-9.5px);
+}
+
+#darkmodeswitch input[type="checkbox"]:checked + span:after {
+  background-color: #3e50b4;
+  transform: translate(39.5px,0px);
+}
+
+.gradient {
+  background: linear-gradient(270deg, #ff0000, #ff9400, #ffee00, #94ff00, #18ff00, #00ff85, #00ffdf, #0098ff, #0600ff, #a300ff, #ff00f5, #ff0058);
+  background-size: 2400% 2400%;
+  -webkit-animation: Gradient 51s ease infinite;
+  -moz-animation: Gradient 51s ease infinite;
+  animation: Gradient 51s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+.designation {
+  color: grey;
+}
+
+.description {
+  margin: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Oxygen', sans-serif;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.inputField {
+  width: 100%;
+  min-height: 35px;
+  max-height: 3000px;
+  padding: 10px;
+  border: 2px solid gray;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
     width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    margin: 0px;
-    cursor: pointer;
-    opacity: 0;
-    z-index: 2;
+    display: block;
+  }
 }
 
-
-#darkmodeswitch span
-{
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    overflow: hidden;
-    opacity: 1;
-    background-color: #fff;
-    box-shadow: 0px 2px 25px gray;
-    border-radius: 40px;
-    transition: 0.2s ease background-color, 0.2s ease opacity;
+.contactusform {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
 }
 
-#darkmodeswitch span:before,#darkmodeswitch span:after
-{
-    content: '';
-    position: absolute;
-    top: 4px;
-    width: 29px;
-    height: 29px;
-    border-radius: 50%;
-    transition: 0.5s ease transform, 0.2s ease background-color;
+.rightSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  max-width: 80%;
+  margin: auto;
+  font-family: 'Oxygen', sans-serif;
 }
 
-#darkmodeswitch span:before
-{
-    background-color: #fff;
-    transform: translate(-29px,0px);
-    z-index: 1;
+.contactUsFormBackground {
+  background-color: lightgrey;
+  padding: 20px;
 }
 
-#darkmodeswitch span:after
-{
-    background-color: #3e50b4;
-    transform: translate(4px,0px);
-    z-index: 0;
+.contactusform input {
+  width: 100%;
+  font-size: 18px;
+  border: 2px solid gray;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 5px;
+  font-family: 'Oxygen', sans-serif;
 }
 
-#darkmodeswitch input[type="checkbox"]:checked + span
-{
-    background-color: #121212;
+.contactusform textarea {
+  width: 100%;
+  font-size: 18px;
+  border: 2px solid gray;
+  border-radius: 5px;
+  margin: 15px 0;
+  padding: 5px;
+  font-family: 'Oxygen', sans-serif;
 }
 
-#darkmodeswitch input[type="checkbox"]:active + span
-{
-    opacity: 0.5;
+.leftSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  max-width: 80%;
+  margin: auto;
+  flex-direction: row-reverse;
+  font-family: 'Oxygen', sans-serif;
 }
 
-#darkmodeswitch input[type="checkbox"]:checked + span:before
-{
-    background-color: #121212;
-    transform: translate(28px,-9.5px);
-}
-#darkmodeswitch input[type="checkbox"]:checked + span:after
-{
-    background-color: #3e50b4;
-    transform: translate(39.5px,0px);
+.bigTextStyle {
+  font-size: 40px;
+  font-family: 'Oxygen', sans-serif;
+  color: #007aff;
 }
 
-        .gradient {
-        background: linear-gradient(270deg, #ff0000, #ff9400, #ffee00, #94ff00, #18ff00, #00ff85, #00ffdf, #0098ff, #0600ff, #a300ff, #ff00f5, #ff0058);
-        background-size: 2400% 2400%;
-    
-        -webkit-animation: Gradient 51s ease infinite;
-        -moz-animation: Gradient 51s ease infinite;
-        animation: Gradient 51s ease infinite;
-    }
-    
-    @-webkit-keyframes Gradient {
-        0%{background-position:0% 50%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 50%}
-    }
-    @-moz-keyframes Gradient {
-        0%{background-position:0% 50%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 50%}
-    }
-    @keyframes Gradient {
-        0%{background-position:0% 50%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 50%}
-    }
-            @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
-            html {
-              box-sizing: border-box;
-              
-            }
-            
-            .designation {
-              color: grey;
-            }
-            .description{
-              margin: 10px;
-            }
-            
-            *{
-                margin: 0;
-                padding: 0;
-                font-family: 'Oxygen', sans-serif;
-                -webkit-box-sizing: border-box;
-                -moz-box-sizing: border-box;
-                box-sizing: border-box;
-            }
-            .inputField {
-              width: 100%;
-              min-height: 35px;
-              max-height: 3000px;
-              padding: 10px; 
-              border: 2px solid gray; 
-              border-radius: 4px; 
-              box-sizing: border-box; 
-              margin-top: 5px; 
-              margin-bottom: 16px;
-              resize: vertical 
-            }
-            
-            
-            @media screen and (max-width: 650px) {
-              .column {
-                width: 100%;
-                display: block;
-              }
-              
-            }
-            .contactusform {
-              border-radius: 5px;
-              background-color: #f2f2f2;
-              padding: 20px;
-            }
-            
-            .rightSection{
-                 display: flex;
-                 align-items: center;
-                 justify-content: space-evenly;
-                 max-width: 80%;
-                 margin: auto;
-                 font-family: 'Oxygen', sans-serif;
-            
-            }
-            .contactUsFormBackground{
-             /* height: 120vh; */
-                background-color: #f6f5f4;
-            padding: 20px;
-            }
-            .contactusform input{
-                width: 100%;
-                font-size: 18px;
-                border: 2px solid gray;
-                border-radius: 5px;
-                margin: 10px 0;
-                padding: 5px;
-                font-family: 'Oxygen', sans-serif;
-            
-            }
-            .contactusform textarea{
-                width: 100%;
-                font-size: 18px;
-                border: 2px solid gray;
-                border-radius: 5px;
-                margin: 15px 0;
-                padding: 5px;
-                font-family: 'Oxygen', sans-serif;
-            
-            }
-            .leftSection{
-                 display: flex;
-                 align-items: center;
-                 justify-content: space-evenly;
-                 max-width: 80%;
-                 margin: auto;
-                 flex-direction: row-reverse;
-                 font-family: 'Oxygen', sans-serif;
-            
-            }
-            .navigationBarTop{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                 position: sticky;
-                 top:0;
-                 cursor: pointer;
-            }
-            .bigTextStyle{
-            font-size: 40px;
+.smallTextStyle {
+  font-size: 20px;
+  font-family: 'Oxygen', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+.custButton {
+  background-color: green;
+  transition: transform 0.5s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.custButton:hover {
+  transform: scale(1.08);
+}
+
+.topMenuList li {
+  transition: transform 0.5s;
+}
+
+.topMenuList li:hover {
+  transform: scale(1.2);
+}
+
+.custImage {
+  background-color: rgb(0, 89, 255);
+  transition: transform 1s;
+}
+
+.custImage:hover {
+  transform: scale(1.3);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 50px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #007aff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: blue;
+  border-radius: 5px;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #007aff;
+}
+
+::selection {
+  color: #fff;
+  background: #007aff;
+}
+
+.topMenuList {
+  width: 70%;
+  display: flex;
+  align-items: center;
+}
+
+.scrollbutton {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #007aff;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50px;
+  color: white;
+  font-size: 20px;
+}
+
+.scrollbutton:hover {
+  background-color: blue;
+}
+
+.darkbutton {
+  position: fixed;
+  bottom: 20px;
+  left: 30px;
+  z-index: 99;
+}
+
+.custButton {
+  padding: 8px 20px;
+  margin: 8px 3px;
+  border: 2px solid white;
+  border-radius: 5px;
+  background: none;
+  color: white;
+  cursor: pointer;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.custButton:hover {
+  border: 2px solid white;
+  border-radius: 5px;
+  background: white;
+  color: black;
+  cursor: pointer;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.buttonSmallSize {
+  padding: 6px 10px;
+  vertical-align: middle;
+  ;
             font-family: 'Oxygen', sans-serif;
-            color: #007aff;
-            }
-            .smallTextStyle{
-                font-size: 20px;
-                font-family: 'Oxygen', sans-serif;
-            
-            }
-            
-            ::-webkit-scrollbar {
-              width: 20px;
-            }
-            .custButton {
-              background-color: green;
-              transition: transform 0.5s; 
-              
-            }
-            html { scroll-behavior: smooth; }
-            
-            .custButton:hover {
-              transform: scale(1.08);
-            }
-            
-            
-            .topMenuList li {
-              transition: transform 0.5s; 
-              
-            }
-            
-            .topMenuList li:hover {
-              transform: scale(1.2);
-            }
-            
-            .custImage {
-              background-color: rgb(0, 89, 255);
-              transition: transform 1s;
-              
-            }
-            
-            .custImage:hover {
-              transform: scale(1.3);
-            }
-            ::-webkit-scrollbar-track {
-              border-radius: 50px;
-              background-color: transparent;
-            }
-            
-            ::-webkit-scrollbar-thumb {
-              border-radius: 5px;
+}
 
-              background: #007aff; 
-            }
-            ::-webkit-scrollbar-thumb:hover {
-              background: blue; 
-              border-radius: 5px;
-              
-            }
-            ::-moz-selection { 
-              color: blue;
-              /* background: #007aff; */
-            }
-            ::selection {
-              color: blue;
-              /* background: #007aff; */
-            }
-            .topMenuList{
-            width: 70%;
-            display: flex;
-            align-items: center;
-            
-            }
-            .scrollbutton {
-              position: fixed; 
-              bottom: 20px; 
-              right: 30px; 
-              z-index: 99; 
-              border: none; 
-              outline: none; 
-              background-color: #007aff; 
-              cursor: pointer; 
-              padding: 15px; 
-              border-radius: 50px; 
-            color: white;
-            font-size: 20px;
-            }
-            .darkbutton {
-              position: fixed; 
-              bottom: 20px; 
-              left: 30px; 
-              z-index: 99;             
-            }
-            .custButton{
-                 padding: 8px 20px;
-                 margin :8px 3px;
-                 border: 2px solid white;
-                 border-radius: 5px;
-                 background: none;
-                 color: white;
-                 cursor: pointer;
-                 font-family: 'Oxygen', sans-serif;
-            
-            }
-            .custButton:hover{
-                 border: 2px solid white;
-                 border-radius: 5px;
-                 background: white;
-                 color: black;
-                 cursor: pointer;
-                 font-family: 'Oxygen', sans-serif;
-            
-            }
-            .buttonSmallSize{
-                 padding: 6px 10px;
-                 vertical-align: middle;;
-                 font-family: 'Oxygen', sans-serif;
-            
-            }
-            .imgLogo{
-                width: 20%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            .imgLogo img{
-                width: 33%;
-                border: 3px solid #007aff;
-                border-radius: 50%;
-             
-            }
-            .text-footer{
-                text-align: center;
-                padding: 25px;
-                font-family: 'Oxygen', sans-serif;
-             color: white;
-            }
-            .topMenuList li{
-            list-style: none;
-            padding: 26px 30px;
-            }
-            .background{
-                background: rgba(0, 0, 0, 0.7) url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Youth-soccer-indiana.jpg/1200px-Youth-soccer-indiana.jpg');
-            background-size: cover;
-            background-blend-mode: darken;
-            
-            }
-            .btn-dark{
-              color: black;
-              border: 2px solid gray;
-              font-family: 'Oxygen', sans-serif;
-            }
-            .btn-dark:hover{
-                
-                color: black;
-                border: 2px solid black;
-                background-color: lightgrey;
-                font-family: 'Oxygen', sans-serif;
-              }
-            .topMenuList li::after{
-             content: '';
-             width: 0;
-             height: 2px;
-             background: #007aff;
-             display: block;
-             margin: auto;
-             color: white;
-             transition: 1s; 
-            }
-            .topMenuList li:hover:after{
-                width: 100%;
-            }
-            .topMenuList li a{
-                text-decoration: none;
-                color: white;
-                font-size: 18px;
-                font-family: 'Oxygen', sans-serif;
-            
-            }
-            .navigationRightSection{
-              width: 45%;
-    text-align: right;
-    padding: 0 23px;
-            }
-            .firstSection{
-                height: 100vh;
-            }
-            .firstHalf{
-            width: 80%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            }
-            .secondHalf{
-            width: 30%;
-            }
-            .contactusform{
-                max-width: 80%;
-                margin: auto;
-            }
-            #search{
-                padding: 5px;
-                font-size: 17px;
-                border: 2px solid gray;
-                border-radius: 9px;
-                font-family: 'Oxygen', sans-serif;
-            
-            }
-            .text-center{
-                text-align: center;
-                padding: 30px;
-                font-size: 30px;
-                font-family: 'Oxygen', sans-serif;
-            
-            }
-            .box-main{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: white;
-                font-family: 'Oxygen', sans-serif;
-                max-width: 50%;
-                margin: auto;
-                height: 75%;
-            }
-            .secondHalf img{
-                width: 100%;
-                border-radius: 550px;
-                border: 2px solid #007aff;
-            }
-            .textDescription{
-                padding: 0px 65px;
-            }
-            .thumbnail img{
-                width: 250px;
-                border-radius: 25px;
-                border: 2px solid #007aff;
-                margin-top: 20px;
-            }
-            .sectionTag{
-                padding: 16px 0;
-            }
-            
-            
-            .burger{
-                display: none;
-            position: absolute;
-            cursor: pointer;
-            right: 5%;
-            top: 15px;
-            }
-           
-            @media only screen and (max-width: 950px){
-            .topMenuList{
-                flex-direction: column;
-            }
-            .textDescription{
-              padding: 0 0;
-            }
-            .topMenuList{
-              visibility: collapse;
-            }
-            .navigationBarTop{
-                flex-direction: column;
-                transition:all 1s cubic-bezier(0.86, 0, 0.07, 1);
-                height: 480px;
-            
-            }
-            .imgLogo{
-                width: 80%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-top: 70px;
-            }
-            .navigationRightSection{
-                text-align: center;
-            }
-            #search{
-                visibility: collapse;
-            }
-            .burger{
-                display: block;
-            }
-            .h-nav{
-            height: 70px;
-            }
-            .v-class{
-              visibility: collapse;
-            }
-            .box-main{
-                flex-direction: column-reverse;
-                max-width: 100%;
-            }
-            .leftSection{
-                flex-direction: column-reverse;
-            }
-            .rightSection{
-                flex-direction: column-reverse;
-            }
-            .bigTextStyle{
-                font-size: 32px;
-            
-                text-align: center;
-            }
-            .smallTextStyle{
-                font-size: 17px;
-            
-                text-align: center;
-            }
-            .buttonSmallSize{
-                visibility: collapse;
-            }
-            .navigationRightSection{
-              visibility: collapse;
-            }
-            .buttons{
-                text-align: center;
-            }
-            .textDescription{
-                padding: 5px;
-            }
-     
-            }
-            
-            .bar1, .bar2, .bar3 {
-              width: 35px;
-              height: 5px;
-              background-color: #fff;
-              margin: 6px 0;
-              transition: 1.2s;
-            }
-            [data-tooltip]::before {
-              content: attr(data-tooltip);
-              position: absolute;
-              opacity: 0;
-              transition: all 0.15s ease;
-              padding: 10px;
-              color: #333;
-              border-radius: 10px;
-              box-shadow: 2px 2px 1px silver;
-            }
-            
-            [data-tooltip]:hover::before {
-              opacity: 1;
-            
-              background: #007aff;
-              margin-top: -50px;
-              margin-left: 20px;
-            }
-            
-            .change .bar1 {
-              -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-              transform: rotate(-45deg) translate(-9px, 6px);
-            }
-            
-            .change .bar2 {opacity: 0;}
-            
-            .change .bar3 {
-              -webkit-transform: rotate(45deg) translate(-8px, -8px);
-              transform: rotate(45deg) translate(-8px, -8px);
-            }
-            .dropdown {
-              position: relative;
-              display: inline-block;
-            }
-            .dropdown-content {
-              display: none;
-              position: absolute;
-              background-color: #f1f1f1;
-              min-width: 160px;
-              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-              z-index: 1;
-            }
-            .dropdown-content a {
-              color: black;
-              padding: 12px 16px;
-              text-decoration: none;
-              display: block;
-            }
-            .dropdown-content a:hover {background-color: #ddd;
-            
-            }
-            .dropdown:hover .dropdown-content {display: block;}
-            .icon-bar {
-              position: fixed;
-              top: 50%;
-              -webkit-transform: translateY(-50%);
-              -ms-transform: translateY(-50%);
-              transform: translateY(-50%);
-            }
-            .icon-bar a {
-              display: block;
-              text-align: center;
-              padding: 6px;
-              transition: all 1.3s ease;
-              color: white;
-            }
-            .icon-bar a:hover {
-              background-color: rgb(83, 83, 83);
-            }
-            
-            .facebook {
-              background: #3B5998;
-              color: white;
-            }
-            
-            .twitter {
-              background: #55ACEE;
-              color: white;
-            }
-            
-            .google {
-              background: #dd4b39;
-              color: white;
-            }
-            
-            .linkedin {
-              background: #007bb5;
-              color: white;
-            }
-            
-            .youtube {
-              background: #bb0000;
-              color: white;
-            }
-            
-            
-            .card {
-              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-              max-width: 300px;
-              margin:auto;
-              margin-top: 10px;
-              margin-bottom: 10px;
-              text-align: center;
-              background-color: white;
-            }
-            
-            .title {
-              color: grey;
-              font-size: 18px;
-            }
-            
- 
-          
+.imgLogo {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-            a {
-              text-decoration: none;
-              font-size: 22px;
-              color: black;
-            }
-            
-       
-    
-    
-    
-    
-            
+.imgLogo img {
+  width: 33%;
+  border: 2px solid #007aff;
+  border-radius: 50%;
+}
 
+.text-footer {
+  text-align: center;
+  padding: 25px;
+  font-family: 'Oxygen', sans-serif;
+  color: white;
+}
 
-            @media only screen and (max-width: 500px){
-              .bigTextStyle{
-                font-size: 25px;
-            
-                text-align: center;
-            }
-            .smallTextStyle{
-                font-size: 13px;
-            
-                text-align: center;
-            }
-            .text-footer{
-                padding: 15px;
-                font-size: 12px;
-            
-            }
-            .textDescription{
-              padding: 0 0;
+.topMenuList li {
+  list-style: none;
+  padding: 26px 30px;
+}
 
-            }
-            .custImage {
-              background-color: rgb(0, 89, 255);
-              transition: transform 1s;
-              
-            }
-            .imgLogo{
-              margin-top: 10px;
+.background {
+  background: rgba(0, 0, 0, 0.7) url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Youth-soccer-indiana.jpg/1200px-Youth-soccer-indiana.jpg');
+  background-size: cover;
+  background-blend-mode: darken;
+}
 
-            }
-            .custImage:hover {
-              transform: scale(1.15);
-            }
-            }
-            @media only screen and (max-width: 1350px){
-              .textDescription{
-              padding: 0px 20px;
+.btn-dark {
+  color: black;
+  border: 2px solid gray;
+  font-family: 'Oxygen', sans-serif;
+}
 
-            }
-            }
-            .contactButton {
-          border-radius: 0;
-          display: inline-block;
-          padding: 8px;
-          text-align: center;
-          cursor: pointer;
-          width: 100%;
-          font-size: 18px;
-        }
-    </style>
-</head>
+.btn-dark:hover {
+  color: black;
+  border: 2px solid black;
+  background-color: lightgrey;
+  font-family: 'Oxygen', sans-serif;
+}
 
-<body>
+.topMenuList li::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background: #007aff;
+  display: block;
+  margin: auto;
+  color: white;
+  transition: 1s;
+}
 
-    <div class="icon-bar">
-        <a href="https://www.facebook.com/" class="facebook"><i class="fa fa-facebook"></i>
-        </a>
-        <a href="https://twitter.com/" class="twitter"><i class="fa fa-twitter"></i></a>
-        <a href="https://google.com/" class="google"><i class="fa fa-google"></i></a>
-        <a href="https://www.linkedin.com/" class="linkedin"><i class="fa fa-linkedin"></i></a>
-        <a href="https://youtube.com/" class="youtube"><i class="fa fa-youtube"></i></a>
-    </div>
-    <form action="#top">
-        <button class="scrollbutton"><i class="fa fa-arrow-up"></i></button>
-    </form>
-    <div class="switchDark darkbutton" id="darkmodeswitch" onclick="darkModeToggle()">
-      <input type="checkbox">
-      <span></span>
-    </div>
+.topMenuList li:hover:after {
+  width: 100%;
+}
 
-    <nav class="navigationBarTop background h-nav">
-        <ul class="topMenuList v-class" id="topMenuList">
-            <div class="imgLogo"><img src="https://cms-assets.tutsplus.com/uploads/users/1631/posts/32276/image/Design%20Your%20Own%20Logo.jpg" alt="logo"></div>
-            <li><a href="#top" id="links">Home</a></li>
-            <li><a href="#about" id="links">About</a></li>
+.topMenuList li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-family: 'Oxygen', sans-serif;
+}
 
-            <div class="dropdown">
-                <li><a href="#t" class="dropbtn">Sports</a></li>
-                <div class="dropdown-content">
+.navigationRightSection {
+  width: 45%;
+  text-align: right;
+  padding: 0 23px;
+}
 
-                    <a href="#cricket" id="links">Cricket</a>
-                    <a href="#basket" id="links">Basketball</a>
-                    <a href="#football" id="links">Football</a>
-                    <a href="#badminton" id="links">Badminton</a>
-                    <a href="#volleyball" id="links">Volleyball</a>
+.firstSection {
+  height: 100vh;
+}
 
+.firstHalf {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
+.secondHalf {
+  width: 30%;
+}
+
+.contactusform {
+  max-width: 80%;
+  margin: auto;
+}
+
+#search {
+  padding: 5px;
+  font-size: 17px;
+  border: 2px solid gray;
+  border-radius: 9px;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.text-center {
+  text-align: center;
+  padding: 30px;
+  font-size: 30px;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.box-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'Oxygen', sans-serif;
+  max-width: 50%;
+  margin: auto;
+  height: 75%;
+}
+
+.secondHalf img {
+  width: 100%;
+  border-radius: 550px;
+  border: 2px solid #007aff;
+}
+
+.textDescription {
+  padding: 0px 65px;
+}
+
+.thumbnail img {
+  width: 250px;
+  border-radius: 25px;
+  border: 2px solid #007aff;
+  margin-top: 20px;
+}
+
+.sectionTag {
+  padding: 16px 0;
+}
+
+.burger {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  right: 5%;
+  top: 15px;
+}
+
+@media only screen and (max-width: 950px) {
+  .topMenuList {
+    flex-direction: column;
+  }
+
+  .textDescription {
+    padding: 0 0;
+  }
+
+  .topMenuList {
+    visibility: collapse;
+  }
+
+  .navigationBarTop {
+    flex-direction: column;
+    transition: all 1s cubic-bezier(0.86, 0, 0.07, 1);
+    height: 480px;
+  }
+
+  .imgLogo {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+  }
+
+  .navigationRightSection {
+    text-align: center;
+  }
+
+  #search {
+    visibility: collapse;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .h-nav {
+    height: 70px;
+  }
+
+  .v-class {
+    visibility: collapse;
+  }
+
+  .box-main {
+    flex-direction: column-reverse;
+    max-width: 100%;
+  }
+
+  .leftSection {
+    flex-direction: column-reverse;
+  }
+
+  .rightSection {
+    flex-direction: column-reverse;
+  }
+
+  .bigTextStyle {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .smallTextStyle {
+    font-size: 17px;
+    text-align: center;
+  }
+
+  .buttonSmallSize {
+    visibility: collapse;
+  }
+
+  .navigationRightSection {
+    visibility: collapse;
+  }
+
+  .buttons {
+    text-align: center;
+  }
+
+  .textDescription {
+    padding: 5px;
+  }
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 1.2s;
+}
+[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    opacity: 0;
+        transition: all 0.5s ease;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    font-size: 17px;
+    pointer-events: none;
+}
+
+[data-tooltip]:hover::before {
+    opacity: 1;
+     background: #007aff;
+    margin-top: -35px;
+}
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: lightgray;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: grey;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 6px;
+  transition: all 1.2s ease;
+  color: white;
+}
+
+.icon-bar a:hover {
+  background-color: rgb(83, 83, 83);
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: white;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+@media only screen and (max-width: 500px) {
+  .bigTextStyle {
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .smallTextStyle {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .text-footer {
+    padding: 15px;
+    font-size: 12px;
+  }
+
+  .textDescription {
+    padding: 0 0;
+  }
+
+  .custImage {
+    background-color: rgb(0, 89, 255);
+    transition: transform 1s;
+  }
+
+  .imgLogo {
+    margin-top: 10px;
+  }
+
+  .custImage:hover {
+    transform: scale(1.15);
+  }
+}
+
+@media only screen and (max-width: 1350px) {
+  .textDescription {
+    padding: 0px 20px;
+  }
+}
+@media only screen and (min-width: 1900px) {
+  .progress-bar {
+  height: 8px;
+  background: #007aff;
+  
+  position: fixed;
+  top: 73px;
+  z-index: 2;
+  width: 0%;
+}
+}
+@media only screen and (min-width: 1930px) {
+  .progress-bar {
+  height: 8px;
+  top: 77px;
+
+}
+
+}
+
+.contactButton {
+  border-radius: 0;
+  display: inline-block;
+  padding: 8px;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+        </style>
+    </head>
+    <body>
+        <div class="icon-bar">
+            <a href="https://www.facebook.com/" class="facebook"><i class="fa fa-facebook"></i>
+            </a>
+            <a href="https://twitter.com/" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="https://google.com/" class="google"><i class="fa fa-google"></i></a>
+            <a href="https://www.linkedin.com/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            <a href="https://youtube.com/" class="youtube"><i class="fa fa-youtube"></i></a>
+        </div>
+        <form action="#top">
+            <button class="scrollbutton"><i class="fa fa-arrow-up"></i></button>
+        </form>
+        <div class="switchDark darkbutton" id="darkmodeswitch" onclick="darkModeToggle()">
+            <input type="checkbox">
+            <span></span>
+        </div>
+        <nav class="navigationBarTop background h-nav">
+            <ul class="topMenuList v-class" id="topMenuList">
+                <div class="imgLogo"><img src="https://www.dummymag.com/wp-content/uploads/2018/12/AVATAR-1200pxls-v3.jpg" alt="logo"></div>
+                <li><a href="#top" id="links">Home</a></li>
+                <li><a href="#about" id="links">About</a></li>
+                <div class="dropdown">
+                    <li><a href="#t" class="dropbtn">Sports</a></li>
+                    <div class="dropdown-content">
+                        <a href="#cricket" id="links">Cricket</a>
+                        <a href="#basket" id="links">Basketball</a>
+                        <a href="#football" id="links">Football</a>
+                        <a href="#badminton" id="links">Badminton</a>
+                        <a href="#volleyball" id="links">Volleyball</a>
+                    </div>
+                </div>
+                <li><a href="#contact" id="links">Contact</a></li>
+            </ul>
+            <div class="navigationRightSection v-class">
+                <input type="text" name="search" id="search" placeholder="Search">
+                <button class="outline">Search</button>        
+            </div>
+            <div class="burger" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </nav>
+        <div class="progress-bar" id="scrollbar"></div>
+        <section class="background firstSection">
+            <div class="box-main">
+                <div class="firstHalf">
+                    <p class="bigTextStyle" data-tooltip="Text">Text</p>
+                    <p class="smallTextStyle">Some big text or a paragraph which has to be big</p>
+                    <div class="buttons">
+                        <form action="#cricket">
+                            <button class="outline">Get Started</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="secondHalf">
+                    <img src="https://www.dummymag.com/wp-content/uploads/2018/12/AVATAR-1200pxls-v3.jpg" id="home" alt="logo">
                 </div>
             </div>
-            <li><a href="#contact" id="links">Contact</a></li>
-           
-              
-        </ul>
-        <div class="navigationRightSection v-class">
-            <input type="text" name="search" id="search" placeholder="Search">
-            <button class="outline">Search</button>        </div>
-        <div class="burger" onclick="myFunction(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
+        </section>
+        <h1 class="text-center" id="about" data-tooltip="About Us">About Us</h1>
+        <div class="card">
+            <img src="https://avatarfiles.alphacoders.com/759/75944.jpg" alt="profile" style="width:100%">
+            <h2 style="color: black;">Taha Gorme</h2>
+            <p class="designation description">UI / UX Designer and Developer</p>
+            <p class="description" style="color: black;">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p class="description" style="color: black;">tahagorme@gmail.com</p>
+            <a href="#contact" class="outline1">Contact</a>
         </div>
-
-    </nav>
-
-    <section class="background firstSection">
-        <div class="box-main">
-
-            <div class="firstHalf">
-
-                <p class="bigTextStyle">Text</p>
-                <p class="smallTextStyle">Some big text or a paragraph which has to be big</p>
-                <div class="buttons">
-                    <form action="#cricket">
-                      <button class="outline">Get Started</button>
-                    </form>
-
-                </div>
+        <section class="rightSection">
+            <div class="textDescription">
+                <p class="sectionTag bigTextStyle" id="cricket" data-tooltip="Cricket">Cricket</p>
+                <p class="sectionSubTag smallTextStyle">Cricket is a bat-and-ball game played between two teams of eleven players on a field at the centre of which is a 22-yard (20-metre) pitch with a wicket at each end, each comprising two bails balanced on three stumps. The batting side scores
+                    runs by striking the ball bowled at the wicket with the bat (and running between the wickets), while the bowling and fielding side tries to prevent this (by preventing the ball from leaving the field, and getting the ball to either wicket)
+                    and dismiss each batter (so they are "out"). Means of dismissal include being bowled, when the ball hits the stumps and dislodges the bails, and by the fielding side either catching the ball after it is hit by the bat, but before it hits
+                    the ground, or hitting a wicket with the ball before a batter can cross the crease in front of the wicket. When ten batters have been dismissed, the innings ends and the teams swap roles. The game is adjudicated by two umpires, aided by
+                    a third umpire and match referee in international matches. They communicate with two off-field scorers who record the match's statistical information.
+                </p>
             </div>
-            <div class="secondHalf">
-                <img src="https://cms-assets.tutsplus.com/uploads/users/1631/posts/32276/image/Design%20Your%20Own%20Logo.jpg" id="home" alt="logo">
-
+            <div class="thumbnail">
+                <img src="https://source.unsplash.com/900x900/?cricket game,cricket bat" alt="cricket" class="custImage">
             </div>
-        </div>
-
-    </section>
-
-    <h1 class="text-center" id="about">About Us</h1>
-
-    <div class="card">
-        <img src="https://avatarfiles.alphacoders.com/759/75944.jpg" alt="profile" style="width:100%">
-        <h2 style="color: black;">Taha Gorme</h2>
-        <p class="designation description">UI / UX Designer and Developer</p>
-        <p class="description" style="color: black;">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-        <p class="description" style="color: black;">tahagorme@gmail.com</p>
-        <a href="#contact" class="outline1">Contact</a>
-    </div>
-
-
-
-
-    <section class="rightSection">
-        <div class="textDescription">
-
-            <p class="sectionTag bigTextStyle" id="cricket">Cricket</p>
-            <p class="sectionSubTag smallTextStyle">Cricket is a bat-and-ball game played between two teams of eleven players on a field at the centre of which is a 22-yard (20-metre) pitch with a wicket at each end, each comprising two bails balanced on three stumps. The batting side scores
-                runs by striking the ball bowled at the wicket with the bat (and running between the wickets), while the bowling and fielding side tries to prevent this (by preventing the ball from leaving the field, and getting the ball to either wicket)
-                and dismiss each batter (so they are "out"). Means of dismissal include being bowled, when the ball hits the stumps and dislodges the bails, and by the fielding side either catching the ball after it is hit by the bat, but before it hits
-                the ground, or hitting a wicket with the ball before a batter can cross the crease in front of the wicket. When ten batters have been dismissed, the innings ends and the teams swap roles. The game is adjudicated by two umpires, aided by
-                a third umpire and match referee in international matches. They communicate with two off-field scorers who record the match's statistical information.
-
+        </section>
+        <section class="leftSection">
+            <div class="textDescription">
+                <p class="sectionTag bigTextStyle" id="basket" data-tooltip="Basketball">Basketball</p>
+                <p class="sectionSubTag smallTextStyle">Basketball, colloquially referred to as hoops, is a team sport in which two teams, most commonly of five players each, opposing one another on a rectangular court, compete with the primary objective of shooting a basketball (approximately
+                    9.4 inches (24 cm) in diameter) through the defender's hoop (a basket 18 inches (46 cm) in diameter mounted 10 feet (3.048 m) high to a backboard at each end of the court) while preventing the opposing team from shooting through their
+                    own hoop. A field goal is worth two points, unless made from behind the three-point line, when it is worth three. After a foul, timed play stops and the player fouled or designated to shoot a technical foul is given one or more one-point
+                    free throws. The team with the most points at the end of the game wins, but if regulation play expires with the score tied, an additional period of play (overtime) is mandated
+                </p>
+            </div>
+            <div class="thumbnail">
+                <img src="https://source.unsplash.com/900x900/?basketball" alt="image" class="custImage">
+            </div>
+        </section>
+        <section class="rightSection">
+            <div class="textDescription">
+                <p class="sectionTag bigTextStyle" id="football" data-tooltip="Football">Football</p>
+                <p class="sectionSubTag smallTextStyle">Football is a family of team sports that involve, to varying degrees, kicking a ball to score a goal. Unqualified, the word football normally means the form of football that is the most popular where the word is used. Sports commonly called
+                    football include association football (known as soccer in some countries); gridiron football (specifically American football or Canadian football); Australian rules football; rugby football (either rugby union or rugby league); and Gaelic
+                    football.These various forms of football share to varying extent common origins and are known as football codes.
+                </p>
+            </div>
+            <div class="thumbnail">
+                <img src="https://source.unsplash.com/900x900/?football" alt="football" class="custImage">
+            </div>
+        </section>
+        <section class="leftSection">
+            <div class="textDescription">
+                <p class="sectionTag bigTextStyle" id="badminton" data-tooltip="Badminton">Badminton</p>
+                <p class="sectionSubTag smallTextStyle">Badminton is a racquet sport played using racquets to hit a shuttlecock across a net. Although it may be played with larger teams, the most common forms of the game are "singles" (with one player per side) and "doubles" (with two players per
+                    side). Badminton is often played as a casual outdoor activity in a yard or on a beach; formal games are played on a rectangular indoor court. Points are scored by striking the shuttlecock with the racquet and landing it within the opposing
+                    side's half of the court.
+                </p>
+            </div>
+            <div class="thumbnail">
+                <img src="https://source.unsplash.com/900x900/?badminton" alt="badminton" class="custImage">
+            </div>
+        </section>
+        </section>
+        <section class="rightSection">
+            <div class="textDescription">
+                <p class="sectionTag bigTextStyle" id="volleyball" data-tooltip="Volleyball">Volleyball</p>
+                <p class="sectionSubTag smallTextStyle">Volleyball is a team sport in which two teams of six players are separated by a net. Each team tries to score points by grounding a ball on the other team's court under organized rules. It has been a part of the official program of the Summer
+                    Olympic Games since Tokyo 1964.
+                </p>
+            </div>
+            <div class="thumbnail">
+                <img src="https://source.unsplash.com/900x900/?volleyball" alt="badminton" class="custImage">
+            </div>
+        </section>
+        <form class="contact" id="contact">
+            <h2 class="text-center" data-tooltip="Contact Us">Contact Us</h2>
+            <div class="contactusform">
+                <label for="fname" style="color: black;" data-tooltip="First Name">First Name</label>
+                <input type="text" class="inputField" id="fname" name="firstname" placeholder="First Name" required oninvalid="this.setCustomValidity('First Name is Required')" oninput="setCustomValidity('')">
+                <label for="lname" style="color: black;" data-tooltip="Last Name">Last Name</label>
+                <input type="text" class="inputField" id="lname" name="lastname" placeholder="Last Name" required oninvalid="this.setCustomValidity('Last Name is Required')" oninput="setCustomValidity('')">
+                <label for="country" style="color: black;" data-tooltip="Country">Country</label>
+                <select id="country" class="inputField" name="country">
+                    <option value="Afganistan">Afghanistan</option>
+                    <option value="Albania">Albania</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="American Samoa">American Samoa</option>
+                    <option value="Andorra">Andorra</option>
+                    <option value="Angola">Angola</option>
+                    <option value="Anguilla">Anguilla</option>
+                    <option value="Antigua & Barbuda">Antigua & Barbuda</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Armenia">Armenia</option>
+                    <option value="Aruba">Aruba</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Austria">Austria</option>
+                    <option value="Azerbaijan">Azerbaijan</option>
+                    <option value="Bahamas">Bahamas</option>
+                    <option value="Bahrain">Bahrain</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="Barbados">Barbados</option>
+                    <option value="Belarus">Belarus</option>
+                    <option value="Belgium">Belgium</option>
+                    <option value="Belize">Belize</option>
+                    <option value="Benin">Benin</option>
+                    <option value="Bermuda">Bermuda</option>
+                    <option value="Bhutan">Bhutan</option>
+                    <option value="Bolivia">Bolivia</option>
+                    <option value="Bonaire">Bonaire</option>
+                    <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
+                    <option value="Botswana">Botswana</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
+                    <option value="Brunei">Brunei</option>
+                    <option value="Bulgaria">Bulgaria</option>
+                    <option value="Burkina Faso">Burkina Faso</option>
+                    <option value="Burundi">Burundi</option>
+                    <option value="Cambodia">Cambodia</option>
+                    <option value="Cameroon">Cameroon</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Canary Islands">Canary Islands</option>
+                    <option value="Cape Verde">Cape Verde</option>
+                    <option value="Cayman Islands">Cayman Islands</option>
+                    <option value="Central African Republic">Central African Republic</option>
+                    <option value="Chad">Chad</option>
+                    <option value="Channel Islands">Channel Islands</option>
+                    <option value="Chile">Chile</option>
+                    <option value="China">China</option>
+                    <option value="Christmas Island">Christmas Island</option>
+                    <option value="Cocos Island">Cocos Island</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Comoros">Comoros</option>
+                    <option value="Congo">Congo</option>
+                    <option value="Cook Islands">Cook Islands</option>
+                    <option value="Costa Rica">Costa Rica</option>
+                    <option value="Cote DIvoire">Cote DIvoire</option>
+                    <option value="Croatia">Croatia</option>
+                    <option value="Cuba">Cuba</option>
+                    <option value="Curaco">Curacao</option>
+                    <option value="Cyprus">Cyprus</option>
+                    <option value="Czech Republic">Czech Republic</option>
+                    <option value="Denmark">Denmark</option>
+                    <option value="Djibouti">Djibouti</option>
+                    <option value="Dominica">Dominica</option>
+                    <option value="Dominican Republic">Dominican Republic</option>
+                    <option value="East Timor">East Timor</option>
+                    <option value="Ecuador">Ecuador</option>
+                    <option value="Egypt">Egypt</option>
+                    <option value="El Salvador">El Salvador</option>
+                    <option value="Equatorial Guinea">Equatorial Guinea</option>
+                    <option value="Eritrea">Eritrea</option>
+                    <option value="Estonia">Estonia</option>
+                    <option value="Ethiopia">Ethiopia</option>
+                    <option value="Falkland Islands">Falkland Islands</option>
+                    <option value="Faroe Islands">Faroe Islands</option>
+                    <option value="Fiji">Fiji</option>
+                    <option value="Finland">Finland</option>
+                    <option value="France">France</option>
+                    <option value="French Guiana">French Guiana</option>
+                    <option value="French Polynesia">French Polynesia</option>
+                    <option value="French Southern Ter">French Southern Ter</option>
+                    <option value="Gabon">Gabon</option>
+                    <option value="Gambia">Gambia</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Ghana">Ghana</option>
+                    <option value="Gibraltar">Gibraltar</option>
+                    <option value="Great Britain">Great Britain</option>
+                    <option value="Greece">Greece</option>
+                    <option value="Greenland">Greenland</option>
+                    <option value="Grenada">Grenada</option>
+                    <option value="Guadeloupe">Guadeloupe</option>
+                    <option value="Guam">Guam</option>
+                    <option value="Guatemala">Guatemala</option>
+                    <option value="Guinea">Guinea</option>
+                    <option value="Guyana">Guyana</option>
+                    <option value="Haiti">Haiti</option>
+                    <option value="Hawaii">Hawaii</option>
+                    <option value="Honduras">Honduras</option>
+                    <option value="Hong Kong">Hong Kong</option>
+                    <option value="Hungary">Hungary</option>
+                    <option value="Iceland">Iceland</option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="India">India</option>
+                    <option value="Iran">Iran</option>
+                    <option value="Iraq">Iraq</option>
+                    <option value="Ireland">Ireland</option>
+                    <option value="Isle of Man">Isle of Man</option>
+                    <option value="Israel">Israel</option>
+                    <option value="Italy">Italy</option>
+                    <option value="Jamaica">Jamaica</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Jordan">Jordan</option>
+                    <option value="Kazakhstan">Kazakhstan</option>
+                    <option value="Kenya">Kenya</option>
+                    <option value="Kiribati">Kiribati</option>
+                    <option value="Korea North">Korea North</option>
+                    <option value="Korea Sout">Korea South</option>
+                    <option value="Kuwait">Kuwait</option>
+                    <option value="Kyrgyzstan">Kyrgyzstan</option>
+                    <option value="Laos">Laos</option>
+                    <option value="Latvia">Latvia</option>
+                    <option value="Lebanon">Lebanon</option>
+                    <option value="Lesotho">Lesotho</option>
+                    <option value="Liberia">Liberia</option>
+                    <option value="Libya">Libya</option>
+                    <option value="Liechtenstein">Liechtenstein</option>
+                    <option value="Lithuania">Lithuania</option>
+                    <option value="Luxembourg">Luxembourg</option>
+                    <option value="Macau">Macau</option>
+                    <option value="Macedonia">Macedonia</option>
+                    <option value="Madagascar">Madagascar</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="Malawi">Malawi</option>
+                    <option value="Maldives">Maldives</option>
+                    <option value="Mali">Mali</option>
+                    <option value="Malta">Malta</option>
+                    <option value="Marshall Islands">Marshall Islands</option>
+                    <option value="Martinique">Martinique</option>
+                    <option value="Mauritania">Mauritania</option>
+                    <option value="Mauritius">Mauritius</option>
+                    <option value="Mayotte">Mayotte</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="Midway Islands">Midway Islands</option>
+                    <option value="Moldova">Moldova</option>
+                    <option value="Monaco">Monaco</option>
+                    <option value="Mongolia">Mongolia</option>
+                    <option value="Montserrat">Montserrat</option>
+                    <option value="Morocco">Morocco</option>
+                    <option value="Mozambique">Mozambique</option>
+                    <option value="Myanmar">Myanmar</option>
+                    <option value="Nambia">Nambia</option>
+                    <option value="Nauru">Nauru</option>
+                    <option value="Nepal">Nepal</option>
+                    <option value="Netherland Antilles">Netherland Antilles</option>
+                    <option value="Netherlands">Netherlands (Holland, Europe)</option>
+                    <option value="Nevis">Nevis</option>
+                    <option value="New Caledonia">New Caledonia</option>
+                    <option value="New Zealand">New Zealand</option>
+                    <option value="Nicaragua">Nicaragua</option>
+                    <option value="Niger">Niger</option>
+                    <option value="Nigeria">Nigeria</option>
+                    <option value="Niue">Niue</option>
+                    <option value="Norfolk Island">Norfolk Island</option>
+                    <option value="Norway">Norway</option>
+                    <option value="Oman">Oman</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="Palau Island">Palau Island</option>
+                    <option value="Palestine">Palestine</option>
+                    <option value="Panama">Panama</option>
+                    <option value="Papua New Guinea">Papua New Guinea</option>
+                    <option value="Paraguay">Paraguay</option>
+                    <option value="Peru">Peru</option>
+                    <option value="Phillipines">Philippines</option>
+                    <option value="Pitcairn Island">Pitcairn Island</option>
+                    <option value="Poland">Poland</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Puerto Rico">Puerto Rico</option>
+                    <option value="Qatar">Qatar</option>
+                    <option value="Republic of Montenegro">Republic of Montenegro</option>
+                    <option value="Republic of Serbia">Republic of Serbia</option>
+                    <option value="Reunion">Reunion</option>
+                    <option value="Romania">Romania</option>
+                    <option value="Russia">Russia</option>
+                    <option value="Rwanda">Rwanda</option>
+                    <option value="St Barthelemy">St Barthelemy</option>
+                    <option value="St Eustatius">St Eustatius</option>
+                    <option value="St Helena">St Helena</option>
+                    <option value="St Kitts-Nevis">St Kitts-Nevis</option>
+                    <option value="St Lucia">St Lucia</option>
+                    <option value="St Maarten">St Maarten</option>
+                    <option value="St Pierre & Miquelon">St Pierre & Miquelon</option>
+                    <option value="St Vincent & Grenadines">St Vincent & Grenadines</option>
+                    <option value="Saipan">Saipan</option>
+                    <option value="Samoa">Samoa</option>
+                    <option value="Samoa American">Samoa American</option>
+                    <option value="San Marino">San Marino</option>
+                    <option value="Sao Tome & Principe">Sao Tome & Principe</option>
+                    <option value="Saudi Arabia">Saudi Arabia</option>
+                    <option value="Senegal">Senegal</option>
+                    <option value="Seychelles">Seychelles</option>
+                    <option value="Sierra Leone">Sierra Leone</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Slovakia">Slovakia</option>
+                    <option value="Slovenia">Slovenia</option>
+                    <option value="Solomon Islands">Solomon Islands</option>
+                    <option value="Somalia">Somalia</option>
+                    <option value="South Africa">South Africa</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Sri Lanka">Sri Lanka</option>
+                    <option value="Sudan">Sudan</option>
+                    <option value="Suriname">Suriname</option>
+                    <option value="Swaziland">Swaziland</option>
+                    <option value="Sweden">Sweden</option>
+                    <option value="Switzerland">Switzerland</option>
+                    <option value="Syria">Syria</option>
+                    <option value="Tahiti">Tahiti</option>
+                    <option value="Taiwan">Taiwan</option>
+                    <option value="Tajikistan">Tajikistan</option>
+                    <option value="Tanzania">Tanzania</option>
+                    <option value="Thailand">Thailand</option>
+                    <option value="Togo">Togo</option>
+                    <option value="Tokelau">Tokelau</option>
+                    <option value="Tonga">Tonga</option>
+                    <option value="Trinidad & Tobago">Trinidad & Tobago</option>
+                    <option value="Tunisia">Tunisia</option>
+                    <option value="Turkey">Turkey</option>
+                    <option value="Turkmenistan">Turkmenistan</option>
+                    <option value="Turks & Caicos Is">Turks & Caicos Is</option>
+                    <option value="Tuvalu">Tuvalu</option>
+                    <option value="Uganda">Uganda</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Ukraine">Ukraine</option>
+                    <option value="United Arab Erimates">United Arab Emirates</option>
+                    <option value="United States of America">United States of America</option>
+                    <option value="Uraguay">Uruguay</option>
+                    <option value="Uzbekistan">Uzbekistan</option>
+                    <option value="Vanuatu">Vanuatu</option>
+                    <option value="Vatican City State">Vatican City State</option>
+                    <option value="Venezuela">Venezuela</option>
+                    <option value="Vietnam">Vietnam</option>
+                    <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
+                    <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
+                    <option value="Wake Island">Wake Island</option>
+                    <option value="Wallis & Futana Is">Wallis & Futana Is</option>
+                    <option value="Yemen">Yemen</option>
+                    <option value="Zaire">Zaire</option>
+                    <option value="Zambia">Zambia</option>
+                    <option value="Zimbabwe">Zimbabwe</option>
+                </select>
+                <label for="subject" style="color: black;" data-tooltip="Subject">Subject</label>
+                <textarea id="subject" name="subject" class="inputField" placeholder="Subject" style="height:200px" required oninvalid="this.setCustomValidity('Subject is Required')" oninput="setCustomValidity('')"></textarea>
+                <button class="outline">Submit</button>        
+            </div>
+        </form>
+        <footer class="background">
+            <p class="text-footer">Copyright &copy; 2020 WebsiteName - All rights Reserved.
             </p>
-        </div>
+        </footer>
+        <script>
+ window.onscroll = function () {
+	scrollFunc()
+};
 
-        <div class="thumbnail">
-
-            <img src="https://source.unsplash.com/900x900/?cricket game,cricket bat" alt="cricket" class="custImage">
-        </div>
-    </section>
-
-    <section class="leftSection">
-        <div class="textDescription">
-
-            <p class="sectionTag bigTextStyle" id="basket">Basketball</p>
-            <p class="sectionSubTag smallTextStyle">Basketball, colloquially referred to as hoops, is a team sport in which two teams, most commonly of five players each, opposing one another on a rectangular court, compete with the primary objective of shooting a basketball (approximately
-                9.4 inches (24 cm) in diameter) through the defender's hoop (a basket 18 inches (46 cm) in diameter mounted 10 feet (3.048 m) high to a backboard at each end of the court) while preventing the opposing team from shooting through their
-                own hoop. A field goal is worth two points, unless made from behind the three-point line, when it is worth three. After a foul, timed play stops and the player fouled or designated to shoot a technical foul is given one or more one-point
-                free throws. The team with the most points at the end of the game wins, but if regulation play expires with the score tied, an additional period of play (overtime) is mandated</p>
-        </div>
-
-        <div class="thumbnail">
-
-            <img src="https://source.unsplash.com/900x900/?basketball" alt="image" class="custImage">
-        </div>
-    </section>
-
-    <section class="rightSection">
-        <div class="textDescription">
-
-            <p class="sectionTag bigTextStyle" id="football">Football</p>
-            <p class="sectionSubTag smallTextStyle">Football is a family of team sports that involve, to varying degrees, kicking a ball to score a goal. Unqualified, the word football normally means the form of football that is the most popular where the word is used. Sports commonly called
-                football include association football (known as soccer in some countries); gridiron football (specifically American football or Canadian football); Australian rules football; rugby football (either rugby union or rugby league); and Gaelic
-                football.These various forms of football share to varying extent common origins and are known as football codes.
-
-            </p>
-        </div>
-
-        <div class="thumbnail">
-
-            <img src="https://source.unsplash.com/900x900/?football" alt="football" class="custImage">
-        </div>
-    </section>
-    <section class="leftSection">
-        <div class="textDescription">
-
-            <p class="sectionTag bigTextStyle" id="badminton">Badminton</p>
-            <p class="sectionSubTag smallTextStyle">Badminton is a racquet sport played using racquets to hit a shuttlecock across a net. Although it may be played with larger teams, the most common forms of the game are "singles" (with one player per side) and "doubles" (with two players per
-                side). Badminton is often played as a casual outdoor activity in a yard or on a beach; formal games are played on a rectangular indoor court. Points are scored by striking the shuttlecock with the racquet and landing it within the opposing
-                side's half of the court.
-
-            </p>
-        </div>
-
-        <div class="thumbnail">
-
-            <img src="https://source.unsplash.com/900x900/?badminton" alt="badminton" class="custImage">
-        </div>
-    </section>
-
-    </section>
-    <section class="rightSection">
-        <div class="textDescription">
-
-            <p class="sectionTag bigTextStyle" id="volleyball">Volleyball</p>
-            <p class="sectionSubTag smallTextStyle">Volleyball is a team sport in which two teams of six players are separated by a net. Each team tries to score points by grounding a ball on the other team's court under organized rules. It has been a part of the official program of the Summer
-                Olympic Games since Tokyo 1964.
-
-            </p>
-        </div>
-
-        <div class="thumbnail">
-
-            <img src="https://source.unsplash.com/900x900/?volleyball" alt="badminton" class="custImage">
-        </div>
-    </section>
-
-
-    <form class="contact" id="contact">
-        <h2 class="text-center">Contact Us</h2>
-        <div class="contactusform">
-            <label for="fname" style="color: black;">First Name</label>
-            <input type="text" class="inputField" id="fname" name="firstname" placeholder="First Name" required oninvalid="this.setCustomValidity('First Name is Required')" oninput="setCustomValidity('')">
-            <label for="lname" style="color: black;">Last Name</label>
-            <input type="text" class="inputField" id="lname" name="lastname" placeholder="Last Name" required oninvalid="this.setCustomValidity('Last Name is Required')" oninput="setCustomValidity('')">
-            <label for="country" style="color: black;">Country</label>
-            <select id="country" class="inputField" name="country">
-   <option value="Afganistan">Afghanistan</option>
-   <option value="Albania">Albania</option>
-   <option value="Algeria">Algeria</option>
-   <option value="American Samoa">American Samoa</option>
-   <option value="Andorra">Andorra</option>
-   <option value="Angola">Angola</option>
-   <option value="Anguilla">Anguilla</option>
-   <option value="Antigua & Barbuda">Antigua & Barbuda</option>
-   <option value="Argentina">Argentina</option>
-   <option value="Armenia">Armenia</option>
-   <option value="Aruba">Aruba</option>
-   <option value="Australia">Australia</option>
-   <option value="Austria">Austria</option>
-   <option value="Azerbaijan">Azerbaijan</option>
-   <option value="Bahamas">Bahamas</option>
-   <option value="Bahrain">Bahrain</option>
-   <option value="Bangladesh">Bangladesh</option>
-   <option value="Barbados">Barbados</option>
-   <option value="Belarus">Belarus</option>
-   <option value="Belgium">Belgium</option>
-   <option value="Belize">Belize</option>
-   <option value="Benin">Benin</option>
-   <option value="Bermuda">Bermuda</option>
-   <option value="Bhutan">Bhutan</option>
-   <option value="Bolivia">Bolivia</option>
-   <option value="Bonaire">Bonaire</option>
-   <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
-   <option value="Botswana">Botswana</option>
-   <option value="Brazil">Brazil</option>
-   <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
-   <option value="Brunei">Brunei</option>
-   <option value="Bulgaria">Bulgaria</option>
-   <option value="Burkina Faso">Burkina Faso</option>
-   <option value="Burundi">Burundi</option>
-   <option value="Cambodia">Cambodia</option>
-   <option value="Cameroon">Cameroon</option>
-   <option value="Canada">Canada</option>
-   <option value="Canary Islands">Canary Islands</option>
-   <option value="Cape Verde">Cape Verde</option>
-   <option value="Cayman Islands">Cayman Islands</option>
-   <option value="Central African Republic">Central African Republic</option>
-   <option value="Chad">Chad</option>
-   <option value="Channel Islands">Channel Islands</option>
-   <option value="Chile">Chile</option>
-   <option value="China">China</option>
-   <option value="Christmas Island">Christmas Island</option>
-   <option value="Cocos Island">Cocos Island</option>
-   <option value="Colombia">Colombia</option>
-   <option value="Comoros">Comoros</option>
-   <option value="Congo">Congo</option>
-   <option value="Cook Islands">Cook Islands</option>
-   <option value="Costa Rica">Costa Rica</option>
-   <option value="Cote DIvoire">Cote DIvoire</option>
-   <option value="Croatia">Croatia</option>
-   <option value="Cuba">Cuba</option>
-   <option value="Curaco">Curacao</option>
-   <option value="Cyprus">Cyprus</option>
-   <option value="Czech Republic">Czech Republic</option>
-   <option value="Denmark">Denmark</option>
-   <option value="Djibouti">Djibouti</option>
-   <option value="Dominica">Dominica</option>
-   <option value="Dominican Republic">Dominican Republic</option>
-   <option value="East Timor">East Timor</option>
-   <option value="Ecuador">Ecuador</option>
-   <option value="Egypt">Egypt</option>
-   <option value="El Salvador">El Salvador</option>
-   <option value="Equatorial Guinea">Equatorial Guinea</option>
-   <option value="Eritrea">Eritrea</option>
-   <option value="Estonia">Estonia</option>
-   <option value="Ethiopia">Ethiopia</option>
-   <option value="Falkland Islands">Falkland Islands</option>
-   <option value="Faroe Islands">Faroe Islands</option>
-   <option value="Fiji">Fiji</option>
-   <option value="Finland">Finland</option>
-   <option value="France">France</option>
-   <option value="French Guiana">French Guiana</option>
-   <option value="French Polynesia">French Polynesia</option>
-   <option value="French Southern Ter">French Southern Ter</option>
-   <option value="Gabon">Gabon</option>
-   <option value="Gambia">Gambia</option>
-   <option value="Georgia">Georgia</option>
-   <option value="Germany">Germany</option>
-   <option value="Ghana">Ghana</option>
-   <option value="Gibraltar">Gibraltar</option>
-   <option value="Great Britain">Great Britain</option>
-   <option value="Greece">Greece</option>
-   <option value="Greenland">Greenland</option>
-   <option value="Grenada">Grenada</option>
-   <option value="Guadeloupe">Guadeloupe</option>
-   <option value="Guam">Guam</option>
-   <option value="Guatemala">Guatemala</option>
-   <option value="Guinea">Guinea</option>
-   <option value="Guyana">Guyana</option>
-   <option value="Haiti">Haiti</option>
-   <option value="Hawaii">Hawaii</option>
-   <option value="Honduras">Honduras</option>
-   <option value="Hong Kong">Hong Kong</option>
-   <option value="Hungary">Hungary</option>
-   <option value="Iceland">Iceland</option>
-   <option value="Indonesia">Indonesia</option>
-   <option value="India">India</option>
-   <option value="Iran">Iran</option>
-   <option value="Iraq">Iraq</option>
-   <option value="Ireland">Ireland</option>
-   <option value="Isle of Man">Isle of Man</option>
-   <option value="Israel">Israel</option>
-   <option value="Italy">Italy</option>
-   <option value="Jamaica">Jamaica</option>
-   <option value="Japan">Japan</option>
-   <option value="Jordan">Jordan</option>
-   <option value="Kazakhstan">Kazakhstan</option>
-   <option value="Kenya">Kenya</option>
-   <option value="Kiribati">Kiribati</option>
-   <option value="Korea North">Korea North</option>
-   <option value="Korea Sout">Korea South</option>
-   <option value="Kuwait">Kuwait</option>
-   <option value="Kyrgyzstan">Kyrgyzstan</option>
-   <option value="Laos">Laos</option>
-   <option value="Latvia">Latvia</option>
-   <option value="Lebanon">Lebanon</option>
-   <option value="Lesotho">Lesotho</option>
-   <option value="Liberia">Liberia</option>
-   <option value="Libya">Libya</option>
-   <option value="Liechtenstein">Liechtenstein</option>
-   <option value="Lithuania">Lithuania</option>
-   <option value="Luxembourg">Luxembourg</option>
-   <option value="Macau">Macau</option>
-   <option value="Macedonia">Macedonia</option>
-   <option value="Madagascar">Madagascar</option>
-   <option value="Malaysia">Malaysia</option>
-   <option value="Malawi">Malawi</option>
-   <option value="Maldives">Maldives</option>
-   <option value="Mali">Mali</option>
-   <option value="Malta">Malta</option>
-   <option value="Marshall Islands">Marshall Islands</option>
-   <option value="Martinique">Martinique</option>
-   <option value="Mauritania">Mauritania</option>
-   <option value="Mauritius">Mauritius</option>
-   <option value="Mayotte">Mayotte</option>
-   <option value="Mexico">Mexico</option>
-   <option value="Midway Islands">Midway Islands</option>
-   <option value="Moldova">Moldova</option>
-   <option value="Monaco">Monaco</option>
-   <option value="Mongolia">Mongolia</option>
-   <option value="Montserrat">Montserrat</option>
-   <option value="Morocco">Morocco</option>
-   <option value="Mozambique">Mozambique</option>
-   <option value="Myanmar">Myanmar</option>
-   <option value="Nambia">Nambia</option>
-   <option value="Nauru">Nauru</option>
-   <option value="Nepal">Nepal</option>
-   <option value="Netherland Antilles">Netherland Antilles</option>
-   <option value="Netherlands">Netherlands (Holland, Europe)</option>
-   <option value="Nevis">Nevis</option>
-   <option value="New Caledonia">New Caledonia</option>
-   <option value="New Zealand">New Zealand</option>
-   <option value="Nicaragua">Nicaragua</option>
-   <option value="Niger">Niger</option>
-   <option value="Nigeria">Nigeria</option>
-   <option value="Niue">Niue</option>
-   <option value="Norfolk Island">Norfolk Island</option>
-   <option value="Norway">Norway</option>
-   <option value="Oman">Oman</option>
-   <option value="Pakistan">Pakistan</option>
-   <option value="Palau Island">Palau Island</option>
-   <option value="Palestine">Palestine</option>
-   <option value="Panama">Panama</option>
-   <option value="Papua New Guinea">Papua New Guinea</option>
-   <option value="Paraguay">Paraguay</option>
-   <option value="Peru">Peru</option>
-   <option value="Phillipines">Philippines</option>
-   <option value="Pitcairn Island">Pitcairn Island</option>
-   <option value="Poland">Poland</option>
-   <option value="Portugal">Portugal</option>
-   <option value="Puerto Rico">Puerto Rico</option>
-   <option value="Qatar">Qatar</option>
-   <option value="Republic of Montenegro">Republic of Montenegro</option>
-   <option value="Republic of Serbia">Republic of Serbia</option>
-   <option value="Reunion">Reunion</option>
-   <option value="Romania">Romania</option>
-   <option value="Russia">Russia</option>
-   <option value="Rwanda">Rwanda</option>
-   <option value="St Barthelemy">St Barthelemy</option>
-   <option value="St Eustatius">St Eustatius</option>
-   <option value="St Helena">St Helena</option>
-   <option value="St Kitts-Nevis">St Kitts-Nevis</option>
-   <option value="St Lucia">St Lucia</option>
-   <option value="St Maarten">St Maarten</option>
-   <option value="St Pierre & Miquelon">St Pierre & Miquelon</option>
-   <option value="St Vincent & Grenadines">St Vincent & Grenadines</option>
-   <option value="Saipan">Saipan</option>
-   <option value="Samoa">Samoa</option>
-   <option value="Samoa American">Samoa American</option>
-   <option value="San Marino">San Marino</option>
-   <option value="Sao Tome & Principe">Sao Tome & Principe</option>
-   <option value="Saudi Arabia">Saudi Arabia</option>
-   <option value="Senegal">Senegal</option>
-   <option value="Seychelles">Seychelles</option>
-   <option value="Sierra Leone">Sierra Leone</option>
-   <option value="Singapore">Singapore</option>
-   <option value="Slovakia">Slovakia</option>
-   <option value="Slovenia">Slovenia</option>
-   <option value="Solomon Islands">Solomon Islands</option>
-   <option value="Somalia">Somalia</option>
-   <option value="South Africa">South Africa</option>
-   <option value="Spain">Spain</option>
-   <option value="Sri Lanka">Sri Lanka</option>
-   <option value="Sudan">Sudan</option>
-   <option value="Suriname">Suriname</option>
-   <option value="Swaziland">Swaziland</option>
-   <option value="Sweden">Sweden</option>
-   <option value="Switzerland">Switzerland</option>
-   <option value="Syria">Syria</option>
-   <option value="Tahiti">Tahiti</option>
-   <option value="Taiwan">Taiwan</option>
-   <option value="Tajikistan">Tajikistan</option>
-   <option value="Tanzania">Tanzania</option>
-   <option value="Thailand">Thailand</option>
-   <option value="Togo">Togo</option>
-   <option value="Tokelau">Tokelau</option>
-   <option value="Tonga">Tonga</option>
-   <option value="Trinidad & Tobago">Trinidad & Tobago</option>
-   <option value="Tunisia">Tunisia</option>
-   <option value="Turkey">Turkey</option>
-   <option value="Turkmenistan">Turkmenistan</option>
-   <option value="Turks & Caicos Is">Turks & Caicos Is</option>
-   <option value="Tuvalu">Tuvalu</option>
-   <option value="Uganda">Uganda</option>
-   <option value="United Kingdom">United Kingdom</option>
-   <option value="Ukraine">Ukraine</option>
-   <option value="United Arab Erimates">United Arab Emirates</option>
-   <option value="United States of America">United States of America</option>
-   <option value="Uraguay">Uruguay</option>
-   <option value="Uzbekistan">Uzbekistan</option>
-   <option value="Vanuatu">Vanuatu</option>
-   <option value="Vatican City State">Vatican City State</option>
-   <option value="Venezuela">Venezuela</option>
-   <option value="Vietnam">Vietnam</option>
-   <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
-   <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
-   <option value="Wake Island">Wake Island</option>
-   <option value="Wallis & Futana Is">Wallis & Futana Is</option>
-   <option value="Yemen">Yemen</option>
-   <option value="Zaire">Zaire</option>
-   <option value="Zambia">Zambia</option>
-   <option value="Zimbabwe">Zimbabwe</option>
-    </select>
-
-            <label for="subject" style="color: black;">Subject</label>
-
-            <textarea id="subject" name="subject" class="inputField" placeholder="Subject" style="height:200px" required oninvalid="this.setCustomValidity('Subject is Required')" oninput="setCustomValidity('')"></textarea>
-            <button class="outline">Submit</button>        </div>
-
-      </form>
-    <footer class="background">
-        <p class="text-footer">Copyright &copy; 2020 WebsiteName - All rights Reserved.
-        </p>
-
-    </footer>
-    <script>
+function scrollFunc() {
+	var scroll = document.body.scrollTop || document.documentElement.scrollTop;
+	var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+	var scrolled = (scroll / height) * 100;
+	document.getElementById("scrollbar").style.width = scrolled + "%";
+}
 
 function darkModeToggle() {
-   var element = document.body;
-   element.classList.toggle("dark-mode");
+	var element = document.body;
+	element.classList.toggle("dark-mode");
 }
 
-        burger=document.querySelector('.burger')
-        navigationBarTop=document.querySelector('.navigationBarTop')
-        navigationRightSection=document.querySelector('.topMenuList')
-        navList=document.querySelector('.navigationRightSection')
-        topMenuList=document.querySelector('.topMenuList')
-        function myFunction(x) {
-          x.classList.toggle("change");
-        }
-          burger.addEventListener('click',()=>{
-        
-            navigationRightSection.classList.toggle('v-class')
-            navList.classList.toggle('v-class')
-            navigationBarTop.classList.toggle('h-nav')
-            if ((document.getElementById("topMenuList").style.visibility = "hidden") | (topMenuList!="visible"))
-  {document.getElementById("topMenuList").style.visibility = "visible";
-  topMenuList="visible"
-  }
-  else  
-  {document.getElementById("topMenuList").style.visibility = "hidden";
-  topMenuList="hidden"}        
-          })
 
-        
-    </script>
-</body>
+burger = document.querySelector('.burger')
+navigationBarTop = document.querySelector('.navigationBarTop')
+navigationRightSection = document.querySelector('.topMenuList')
+navList = document.querySelector('.navigationRightSection')
+topMenuList = document.querySelector('.topMenuList')
 
+function myFunction(x) {
+	x.classList.toggle("change");
+}
+burger.addEventListener('click', () => {
+
+	navigationRightSection.classList.toggle('v-class')
+	navList.classList.toggle('v-class')
+	navigationBarTop.classList.toggle('h-nav')
+	if ((document.getElementById("topMenuList").style.visibility = "hidden") | (topMenuList != "visible")) {
+		document.getElementById("topMenuList").style.visibility = "visible";
+		topMenuList = "visible"
+	}
+	else {
+		document.getElementById("topMenuList").style.visibility = "hidden";
+		topMenuList = "hidden"
+	}
+
+  if ((document.getElementById("scrollbar").style.visibility = "hidden") | (topMenuList != "visible")) {
+		document.getElementById("scrollbar").style.visibility = "visible";
+	}
+	else {
+		document.getElementById("scrollbar").style.visibility = "hidden";
+	}
+})
+        </script>
+    </body>
 </html>
