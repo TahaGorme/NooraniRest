@@ -8,6 +8,10 @@
         <style>
           
 body {
+  margin: 0px;
+         padding: 0px;
+
+       box-sizing: border-box;
   -webkit-transition: background-color 0.5s linear;
   -moz-transition: background-color .5s linear;
   -o-transition: background-color .5s linear;
@@ -234,9 +238,7 @@ input[type="checkbox"] {
 
 @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
 
-html {
-  box-sizing: border-box;
-}
+
 
 .designation {
   color: grey;
@@ -267,7 +269,6 @@ html {
   margin-bottom: 16px;
   resize: vertical;
 }
-
 @media screen and (max-width: 650px) {
   .column {
     width: 100%;
@@ -346,6 +347,10 @@ html {
 }
 
 html {
+  box-sizing: border-box;
+
+  margin: 0px;
+         padding: 0px;
   scroll-behavior: smooth;
 }
 
@@ -616,7 +621,7 @@ html {
 
   .navigationBarTop {
     flex-direction: column;
-    transition: all 1s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 2s cubic-bezier(0.86, 0, 0.07, 1);
     height: 480px;
   }
 
@@ -772,14 +777,17 @@ html {
 }
 
 .icon-bar a:hover {
-  background-color: rgb(83, 83, 83);
+  background: rgb(83, 83, 83);
 }
 
 .facebook {
   background: #3B5998;
   color: white;
 }
-
+.pinterest {
+  background: #E60023;
+  color: white;
+}
 .twitter {
   background: #55ACEE;
   color: white;
@@ -799,7 +807,14 @@ html {
   background: #bb0000;
   color: white;
 }
-
+.whatsapp {
+  background: #25D366;
+  color: white;
+}
+.instagram {
+  background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+  color: white;
+}
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
@@ -895,9 +910,14 @@ a {
         <div class="icon-bar">
             <a href="https://www.facebook.com/" class="facebook"><i class="fa fa-facebook"></i>
             </a>
-            <a href="https://twitter.com/" class="twitter"><i class="fa fa-twitter"></i></a>
             <a href="https://google.com/" class="google"><i class="fa fa-google"></i></a>
-            <a href="https://www.linkedin.com/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            <a href="https://instagram.com/" class="instagram"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.pinterest.com/" class="pinterest"><i class="fa fa-pinterest"></i></a>
+
+            <a href="https://twitter.com/" class="twitter"><i class="fa fa-twitter"></i></a>
+
+            <a href="https://whatsapp.com/" class="whatsapp"><i class="fa fa-whatsapp"></i></a>
             <a href="https://youtube.com/" class="youtube"><i class="fa fa-youtube"></i></a>
         </div>
         <form action="#top">
