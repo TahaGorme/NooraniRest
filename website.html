@@ -43,7 +43,42 @@ button {
   z-index: 2;
   width: 0%;
 }
+.animatedTitle{
+    position: relative;
+    font-size: 40px;
+    color: white;
+    -webkit-text-stroke: 2px blue;
 
+}
+.disableselect {
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+    -khtml-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none; 
+    user-select: none; 
+}
+.animatedTitle::before{
+    content: attr(animated-Name);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #007aff;
+    -webkit-text-stroke: 0vw white;
+    border-right: 2px solid #007aff;
+    overflow: hidden;
+    animation: animateTextBackForth 7s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+@keyframes animateTextBackForth{
+    0%,10%,100%{
+width: 0;
+    }
+    70%,90%{
+width: 100%;
+    }
+}
 .outline {
   background: transparent;
   color: #007aff;
@@ -236,7 +271,7 @@ input[type="checkbox"] {
   }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=oxygen&display=swap');
 
 
 
@@ -251,7 +286,7 @@ input[type="checkbox"] {
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Oxygen', sans-serif;
+  font-family: 'oxygen', sans-serif;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -288,7 +323,6 @@ input[type="checkbox"] {
   justify-content: space-evenly;
   max-width: 80%;
   margin: auto;
-  font-family: 'Oxygen', sans-serif;
 }
 
 .contactUsFormBackground {
@@ -303,7 +337,6 @@ input[type="checkbox"] {
   border-radius: 5px;
   margin: 10px 0;
   padding: 5px;
-  font-family: 'Oxygen', sans-serif;
 }
 
 .contactusform textarea {
@@ -313,7 +346,6 @@ input[type="checkbox"] {
   border-radius: 5px;
   margin: 15px 0;
   padding: 5px;
-  font-family: 'Oxygen', sans-serif;
 }
 
 .leftSection {
@@ -323,18 +355,15 @@ input[type="checkbox"] {
   max-width: 80%;
   margin: auto;
   flex-direction: row-reverse;
-  font-family: 'Oxygen', sans-serif;
 }
 
 .bigTextStyle {
   font-size: 40px;
-  font-family: 'Oxygen', sans-serif;
   color: #007aff;
 }
 
 .smallTextStyle {
   font-size: 20px;
-  font-family: 'Oxygen', sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -440,7 +469,6 @@ html {
   background: none;
   color: white;
   cursor: pointer;
-  font-family: 'Oxygen', sans-serif;
 }
 
 .custButton:hover {
@@ -449,14 +477,12 @@ html {
   background: white;
   color: black;
   cursor: pointer;
-  font-family: 'Oxygen', sans-serif;
 }
 
 .buttonSmallSize {
   padding: 6px 10px;
   vertical-align: middle;
   ;
-            font-family: 'Oxygen', sans-serif;
 }
 
 .imgLogo {
@@ -475,7 +501,6 @@ html {
 .text-footer {
   text-align: center;
   padding: 25px;
-  font-family: 'Oxygen', sans-serif;
   color: white;
 }
 
@@ -493,14 +518,12 @@ html {
 .btn-dark {
   color: black;
   border: 2px solid gray;
-  font-family: 'Oxygen', sans-serif;
 }
 
 .btn-dark:hover {
   color: black;
   border: 2px solid black;
   background-color: lightgrey;
-  font-family: 'Oxygen', sans-serif;
 }
 
 .topMenuList li::after {
@@ -522,7 +545,6 @@ html {
   text-decoration: none;
   color: white;
   font-size: 18px;
-  font-family: 'Oxygen', sans-serif;
 }
 
 .navigationRightSection {
@@ -554,16 +576,25 @@ html {
 #search {
   padding: 5px;
   font-size: 17px;
-  border: 2px solid gray;
-  border-radius: 9px;
-  font-family: 'Oxygen', sans-serif;
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
 }
+#search:focus{
+  width: 230px;
 
+}
 .text-center {
   text-align: center;
   padding: 30px;
   font-size: 30px;
-  font-family: 'Oxygen', sans-serif;
 }
 
 .box-main {
@@ -571,7 +602,6 @@ html {
   justify-content: center;
   align-items: center;
   color: white;
-  font-family: 'Oxygen', sans-serif;
   max-width: 50%;
   margin: auto;
   height: 75%;
@@ -621,7 +651,7 @@ html {
 
   .navigationBarTop {
     flex-direction: column;
-    transition: all 2s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 2s cubic-bezier(0.77, 0, 0.175, 1);
     height: 480px;
   }
 
@@ -930,10 +960,10 @@ a {
         <nav class="navigationBarTop background h-nav">
             <ul class="topMenuList v-class" id="topMenuList">
                 <div class="imgLogo"><img src="https://www.dummymag.com/wp-content/uploads/2018/12/AVATAR-1200pxls-v3.jpg" alt="logo"></div>
-                <li><a href="#top" id="links">Home</a></li>
-                <li><a href="#about" id="links">About</a></li>
+                <li><a href="#top" id="links"><i class="fa fa-fw fa-home"></i>Home</a></li>
+                <li><a href="#about" id="links"><i class="fa fa-fw fa-info"></i>About</a></li>
                 <div class="dropdown">
-                    <li><a href="#t" class="dropbtn">Sports</a></li>
+                    <li><a href="#t" class="dropbtn"><i class="fa fa-fw fa-futbol-o"></i>Sports</a></li>
                     <div class="dropdown-content">
                         <a href="#cricket" id="links">Cricket</a>
                         <a href="#basket" id="links">Basketball</a>
@@ -942,11 +972,15 @@ a {
                         <a href="#volleyball" id="links">Volleyball</a>
                     </div>
                 </div>
-                <li><a href="#contact" id="links">Contact</a></li>
+                <li><a href="#contact" id="links"><i class="fa fa-fw fa-user"></i>Contact</a></li>
             </ul>
             <div class="navigationRightSection v-class">
-                <input type="text" name="search" id="search" placeholder="Search">
-                <button class="outline">Search</button>        
+
+                  <input type="text" name="search" id="search" placeholder="Search">
+                                  <span class="fa fa-search"></span>
+
+                <button class="outline">Search</button>       
+ 
             </div>
             <div class="burger" onclick="myFunction(this)">
                 <div class="bar1"></div>
@@ -954,12 +988,13 @@ a {
                 <div class="bar3"></div>
             </div>
         </nav>
-        <div class="progress-bar" id="scrollbar"></div>
+                  <div class="progress-bar" id="scrollbar"></div>
         <section class="background firstSection">
             <div class="box-main">
                 <div class="firstHalf">
-                    <p class="bigTextStyle" data-tooltip="Text">Text</p>
-                    <p class="smallTextStyle">Some big text or a paragraph which has to be big</p>
+                  
+                    <p class="bigTextStyle" data-tooltip="AthleKit" style="font-family: 'oxygen', cursive;">AthleKit</p>
+                    <p class="smallTextStyle" style="font-family: 'oxygen', cursive;">Wait Till We Get Our AthleKit On You.</p>
                     <div class="buttons">
                         <form action="#cricket">
                             <button class="outline">Get Started</button>
